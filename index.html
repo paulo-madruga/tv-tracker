@@ -596,6 +596,7 @@
   <div class="header-actions">
     <span class="sync-status" id="syncStatus">—</span>
     <button class="btn btn-ghost btn-sm" onclick="openSettings()">CONFIG</button>
+    <button class="btn btn-ghost btn-sm" id="syncBtn" onclick="triggerSync()">↻ SYNC</button>
     <button class="btn btn-primary btn-sm" onclick="openAddModal()">+ ADD</button>
   </div>
 </header>
@@ -1420,6 +1421,51 @@ async function confirmAdd() {
   closeAddModal();
   render();
   await pushToGithub();
+}
+
+// ── SYNC / TRIGGER ACTION ─────────────────────────────────────────────────
+async function triggerSync() {
+  if (!cfg.repo || !cfg.token) {
+    toast('Configure GitHub in settings first.', 'err');
+    return;
+  }
+
+  const btn = document.getElementById('syncBtn');
+  btn.textContent = '↻ SYNCING...';
+  btn.disabled = true;
+  setSyncStatus('TRIGGERING...', 'syncing');
+
+  try {
+    // Trigger the GitHub Action
+    const res = await fetch(`https://api.github.com/repos/${cfg.repo}/actions/workflows/weekly-sync.yml/dispatches`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${cfg.token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ref: 'main' })
+    });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.message || `GitHub ${res.status}`);
+    }
+
+    toast('Sync started. Pulling updated data in 60s...', 'ok');
+    setSyncStatus('ACTION RUNNING...', 'syncing');
+
+    // Wait 60 seconds for the action to complete, then pull fresh data
+    await new Promise(resolve => setTimeout(resolve, 60000));
+    await fetchFromGithub();
+
+  } catch(e) {
+    toast('Sync failed: ' + e.message, 'err');
+    setSyncStatus('SYNC ERROR', 'error');
+  } finally {
+    btn.textContent = '↻ SYNC';
+    btn.disabled = false;
+  }
 }
 
 // ── SETTINGS ───────────────────────────────────────────────────────────────
