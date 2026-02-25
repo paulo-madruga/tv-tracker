@@ -1519,10 +1519,12 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
 });
 </script>
 
-<!-- PWA Service Worker registration -->
+<!-- Service worker disabled -->
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(reg => reg.unregister());
+  });
 }
 </script>
 
