@@ -558,10 +558,34 @@
     margin-top: 2px;
   }
 
+  .network-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    color: var(--text3);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+
   @media (max-width: 600px) {
-    .card { flex-direction: column; }
-    .card-actions { width: 100%; justify-content: flex-start; }
+    .card { flex-direction: column; gap: 10px; }
+    .card-actions {
+      width: 100%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .card-actions .badge { flex-shrink: 0; }
     .form-row { flex-direction: column; }
+    .badge {
+      font-size: 8px;
+      padding: 2px 6px;
+      letter-spacing: 0.06em;
+    }
+    .btn-sm { font-size: 9px; padding: 5px 8px; }
   }
 </style>
 </head>
@@ -695,6 +719,20 @@
               <option value="Ended">Ended</option>
             </select>
           </div>
+        </div>
+        <div class="form-group">
+          <label>Streaming Service</label>
+          <select id="addNetwork">
+            <option value="">Unknown</option>
+            <option value="Apple TV+">Apple TV+</option>
+            <option value="Disney+">Disney+</option>
+            <option value="HBO Max">HBO Max</option>
+            <option value="Hulu">Hulu</option>
+            <option value="Netflix">Netflix</option>
+            <option value="Prime Video">Prime Video</option>
+            <option value="Peacock">Peacock</option>
+            <option value="Paramount+">Paramount+</option>
+          </select>
         </div>
         <div class="form-group">
           <label>Add to List</label>
@@ -958,7 +996,7 @@ function cardWatchingNow(s) {
   return `<div class="card">
     <div class="card-main">
       <div class="card-title">${esc(s.title)}</div>
-      <div class="card-meta">Season <span>${s.current_season}</span> of <span>${s.total_seasons}</span> · ${statusBadge(s.show_status)}</div>
+      <div class="card-meta">Season <span>${s.current_season}</span> of <span>${s.total_seasons}</span> · ${statusBadge(s.show_status)}${s.network ? ` · <span class="network-badge">${esc(s.network)}</span>` : ''}</div>
       ${s.notes ? `<div class="card-blurb">${esc(s.notes)}</div>` : ''}
     </div>
     <div class="card-actions">
@@ -972,7 +1010,8 @@ function cardAvailable(s) {
   return `<div class="card">
     <div class="card-main">
       <div class="card-title">${esc(s.title)}</div>
-      <div class="card-meta">Season <span>${s.next_season}</span> available · <span>${s.total_seasons}</span> total seasons · ${statusBadge(s.show_status)}</div>
+      <div class="card-meta">Season <span>${s.next_season}</span> available · <span>${s.total_seasons}</span> total · ${statusBadge(s.show_status)}${s.network ? ` · <span class="network-badge">${esc(s.network)}</span>` : ''}</div>
+      ${s.notes ? `<div class="card-blurb">${esc(s.notes)}</div>` : ''}
     </div>
     <div class="card-actions">
       <button class="btn btn-primary btn-sm" onclick="startWatching('${s.id}')">START WATCHING</button>
@@ -984,8 +1023,9 @@ function cardWaiting(s) {
   return `<div class="card">
     <div class="card-main">
       <div class="card-title">${esc(s.title)}</div>
-      <div class="card-meta">Watched through S<span>${s.seasons_watched}</span> · Waiting for S<span>${s.seasons_watched + 1}</span> · ${statusBadge(s.show_status)}</div>
-      ${s.expected_date ? `<div class="card-blurb">Expected: ${s.expected_date}</div>` : ''}
+      <div class="card-meta">Through S<span>${s.seasons_watched}</span> · Waiting S<span>${s.seasons_watched + 1}</span>${s.network ? ` · <span class="network-badge">${esc(s.network)}</span>` : ''}</div>
+      ${s.expected_date ? `<div class="card-blurb">Expected: ${esc(s.expected_date)}</div>` : ''}
+      ${s.notes ? `<div class="card-blurb" style="color:var(--text3);font-size:11px;">${esc(s.notes)}</div>` : ''}
     </div>
     <div class="card-actions">
       <span class="badge badge-ended">WAITING</span>
@@ -997,9 +1037,9 @@ function cardExplore(s) {
   return `<div class="card">
     <div class="card-main">
       <div class="card-title">${esc(s.title)}</div>
-      <div class="card-meta"><span>${s.total_seasons || '?'}</span> seasons · ${statusBadge(s.show_status)}</div>
+      <div class="card-meta"><span>${s.total_seasons || '?'}</span> seasons · ${statusBadge(s.show_status)}${s.network ? ` · <span class="network-badge">${esc(s.network)}</span>` : ''}</div>
       ${s.blurb ? `<div class="card-blurb">${esc(s.blurb)}</div>` : ''}
-      ${s.notes ? `<div class="card-blurb" style="color:var(--text3);font-size:11px;">via: ${esc(s.notes)}</div>` : ''}
+      ${s.notes ? `<div class="card-blurb" style="color:var(--text3);font-size:11px;">${esc(s.notes)}</div>` : ''}
     </div>
     <div class="card-actions">
       <button class="btn btn-primary btn-sm" onclick="startFromExplore('${s.id}')">WATCH NOW</button>
@@ -1012,9 +1052,9 @@ function cardReco(s, i) {
   return `<div class="reco-card">
     <div class="reco-rank">#${i+1} RECOMMENDED</div>
     <div class="reco-title">${esc(s.title)}</div>
-    <div class="card-meta" style="margin-top:4px;">${s.total_seasons ? `<span>${s.total_seasons}</span> seasons · ` : ''}${statusBadge(s.show_status)}</div>
+    <div class="card-meta" style="margin-top:4px;">${s.total_seasons ? `<span>${s.total_seasons}</span> seasons · ` : ''}${statusBadge(s.show_status)}${s.network ? ` · <span class="network-badge">${esc(s.network)}</span>` : ''}</div>
     ${s.reason ? `<div class="reco-reason">${esc(s.reason)}</div>` : ''}
-    <div style="margin-top:10px;display:flex;gap:6px;">
+    <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;">
       <button class="btn btn-primary btn-sm" onclick="startFromReco('${s.id}')">WATCH NOW</button>
       <button class="btn btn-ghost btn-sm" onclick="addRecoToExplore('${s.id}')">ADD TO EXPLORE</button>
       <button class="btn btn-ghost btn-sm" onclick="dismissReco('${s.id}')">DISMISS</button>
@@ -1370,10 +1410,11 @@ async function confirmAdd() {
     }
   }
 
+  const network = document.getElementById('addNetwork').value;
   if (list === 'watching_now') {
-    DB.watching_now.push({ id, title, tmdb_id: tmdbId, current_season: season, total_seasons: totalSeasons, show_status: status, notes });
+    DB.watching_now.push({ id, title, tmdb_id: tmdbId, current_season: season, total_seasons: totalSeasons, show_status: status, network, notes });
   } else {
-    DB.series_to_explore.push({ id, title, tmdb_id: tmdbId, total_seasons: totalSeasons, show_status: status, blurb, notes });
+    DB.series_to_explore.push({ id, title, tmdb_id: tmdbId, total_seasons: totalSeasons, show_status: status, network, blurb, notes });
   }
 
   closeAddModal();
