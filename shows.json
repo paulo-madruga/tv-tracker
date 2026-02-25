@@ -1,10 +1,43 @@
 {
-  "last_updated": "2026-02-24T00:00:00Z",
+  "last_updated": "2026-02-25T03:41:42.313407+00:00",
   "watching_now": [],
   "available_to_watch_next": [],
   "waiting_for_next_season": [],
   "series_to_explore": [],
-  "claude_recommendations": [],
+  "claude_recommendations": [
+    {
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 2406,
+      "total_seasons": 6,
+      "show_status": "Ended",
+      "reason": "Cold War espionage thriller with morally complex Russian sleeper agents living undercover in America. Maintains tight narrative focus across all six seasons with every episode advancing the central arc of their deteriorating cover and family dynamics."
+    },
+    {
+      "id": "severance",
+      "title": "Severance",
+      "tmdb_id": 95396,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "reason": "Tech paranoia thriller exploring corporate dystopia where employees surgically separate work and personal memories. Features the controlled cast and psychological complexity of Mr. Robot with every episode building toward revelations about the sinister Lumon corporation."
+    },
+    {
+      "id": "mare-of-easttown",
+      "title": "Mare of Easttown",
+      "tmdb_id": 85552,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "reason": "Tightly constructed murder mystery with morally complex protagonist investigating crime in a small Pennsylvania town. Limited series format ensures no filler with each episode methodically advancing the investigation while exploring character depths."
+    },
+    {
+      "id": "the-terror",
+      "title": "The Terror",
+      "tmdb_id": 75191,
+      "total_seasons": 2,
+      "show_status": "Ended",
+      "reason": "Survival thriller following Franklin Expedition trapped in Arctic ice with supernatural horror elements. Season one maintains tight narrative focus on the doomed crew's deteriorating situation without sprawl or cast bloat."
+    }
+  ],
   "finished_watching": [
     {
       "id": "dark",
