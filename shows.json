@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-25T03:48:18.224756+00:00",
+  "last_updated": "2026-02-25T03:50:53.867Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -102,7 +102,7 @@
       "seasons_watched": 1,
       "total_seasons": 1,
       "show_status": "Canceled",
-      "notes": "Unconfirmed — Disney+",
+      "notes": "Unconfirmed â Disney+",
       "expected_date": null
     },
     {
@@ -142,7 +142,7 @@
       "seasons_watched": 3,
       "total_seasons": 3,
       "show_status": "Returning Series",
-      "notes": "Prime Video — pre-production underway",
+      "notes": "Prime Video â pre-production underway",
       "expected_date": "2026"
     },
     {
@@ -152,7 +152,7 @@
       "seasons_watched": 2,
       "total_seasons": 1,
       "show_status": "Returning Series",
-      "notes": "Netflix — S3 not yet announced",
+      "notes": "Netflix â S3 not yet announced",
       "expected_date": null
     },
     {
@@ -183,7 +183,7 @@
       "total_seasons": 3,
       "show_status": "Ended",
       "blurb": "Explores grief and faith after a sudden global disappearance. Emotionally intense with complex characters.",
-      "notes": "HBO — S1: 82% RT"
+      "notes": "HBO â S1: 82% RT"
     },
     {
       "id": "the-terror",
@@ -192,7 +192,7 @@
       "total_seasons": 2,
       "show_status": "Ended",
       "blurb": "Horror blending historical expeditions with supernatural dread. S1 survival story echoes dystopian and morally fraught narratives.",
-      "notes": "AMC — S1: 94% RT, S2: 80% RT"
+      "notes": "AMC â S1: 94% RT, S2: 80% RT"
     },
     {
       "id": "fargo",
@@ -201,7 +201,7 @@
       "total_seasons": 5,
       "show_status": "Continuing",
       "blurb": "Anthological crime drama blending dark humor with moral dilemmas. Each season is a fresh self-contained story.",
-      "notes": "FX/Hulu — S1: 97% RT. Note: anthology format per season."
+      "notes": "FX/Hulu â S1: 97% RT. Note: anthology format per season."
     },
     {
       "id": "station-eleven",
@@ -210,7 +210,7 @@
       "total_seasons": 1,
       "show_status": "Ended",
       "blurb": "Post-apocalyptic drama linking survivors after a flu pandemic. Combines survival themes with hope and artistry.",
-      "notes": "HBO Max — 98% RT"
+      "notes": "HBO Max â 98% RT"
     },
     {
       "id": "narcos",
@@ -218,8 +218,8 @@
       "tmdb_id": 63351,
       "total_seasons": 3,
       "show_status": "Ended",
-      "blurb": "Chronicles the rise of the Medellín and Cali cartels. Fast-paced and morally complex with emphasis on crime and law enforcement.",
-      "notes": "Netflix — S1: 79% RT"
+      "blurb": "Chronicles the rise of the MedellÃ­n and Cali cartels. Fast-paced and morally complex with emphasis on crime and law enforcement.",
+      "notes": "Netflix â S1: 79% RT"
     },
     {
       "id": "the-spy",
@@ -228,7 +228,7 @@
       "total_seasons": 1,
       "show_status": "Ended",
       "blurb": "Tense espionage miniseries based on real Israeli spy Eli Cohen. Sacha Baron Cohen delivers a gripping performance.",
-      "notes": "Netflix — 6 episodes, 86% RT"
+      "notes": "Netflix â 6 episodes, 86% RT"
     },
     {
       "id": "12-monkeys",
@@ -237,7 +237,7 @@
       "total_seasons": 4,
       "show_status": "Ended",
       "blurb": "Time-travel thriller with complex plotting and evolving characters. Later seasons reach 90%+ RT after a slow start.",
-      "notes": "Syfy — S1: 60% RT, later seasons 90%+"
+      "notes": "Syfy â S1: 60% RT, later seasons 90%+"
     },
     {
       "id": "for-all-mankind",
@@ -246,7 +246,7 @@
       "total_seasons": 4,
       "show_status": "Continuing",
       "blurb": "Alternate-history space race exploring political intrigue and personal sacrifice. Gradually darkens across seasons.",
-      "notes": "Apple TV+ — S1: 75% RT"
+      "notes": "Apple TV+ â S1: 75% RT"
     },
     {
       "id": "dark-matter",
@@ -255,7 +255,7 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "blurb": "High-concept sci-fi about a physicist thrust into parallel realities. Balances action with moral dilemmas.",
-      "notes": "Apple TV+ — S1: 82% RT"
+      "notes": "Apple TV+ â S1: 82% RT"
     },
     {
       "id": "silo",
@@ -264,7 +264,7 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "blurb": "Dystopian mystery set in a subterranean silo. Strong world-building, suspense and rebellion against an oppressive system.",
-      "notes": "Apple TV+ — S1: 88%, S2: 96% RT"
+      "notes": "Apple TV+ â S1: 88%, S2: 96% RT"
     },
     {
       "id": "murderbot",
@@ -273,7 +273,7 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "blurb": "Follows a security robot that hacks its governor module to become autonomous while still protecting humans. Dark humor, action and anti-corporate themes.",
-      "notes": "Apple TV+ — S1: 96% RT"
+      "notes": "Apple TV+ â S1: 96% RT"
     },
     {
       "id": "the-diplomat",
@@ -282,7 +282,16 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "blurb": "Political thriller about an ambassador juggling international crises. Fast-paced geopolitics and character-driven intrigue.",
-      "notes": "Netflix — S1: 84% RT"
+      "notes": "Netflix â S1: 84% RT"
+    },
+    {
+      "id": "counterpart",
+      "title": "Counterpart",
+      "tmdb_id": 63646,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "blurb": "Howard Silk is a lowly cog in a bureaucratic UN agency who is turning the last corner of a life filled with regret when he discovers the agency he works for is guarding a secret: a crossing to a parallel dimension.",
+      "notes": "Sci-fi espionage: a bureaucrat discovers a parallel-world spy agency and meets his ruthless counterpart. Deeply complex and morally ambiguous, ideal for fans of 1984 and Red Rising."
     }
   ],
   "claude_recommendations": [
@@ -507,7 +516,7 @@
       "seasons_watched": 2,
       "total_seasons": 5,
       "status": "Ended",
-      "notes": "Loved S1. Dropped mid-S2 onward — too many characters, plot sprawl",
+      "notes": "Loved S1. Dropped mid-S2 onward â too many characters, plot sprawl",
       "date_finished": null
     },
     {
