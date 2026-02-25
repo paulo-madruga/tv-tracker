@@ -168,6 +168,15 @@
   ],
   "series_to_explore": [
     {
+  "id": "slow-horses",
+  "title": "Slow Horses",
+  "tmdb_id": 95480,
+  "total_seasons": 5,
+  "show_status": "Continuing",
+  "blurb": "Disgraced MI5 agents and their obnoxious boss navigate the espionage world to defend England from sinister forces. Tight seasonal arcs, Gary Oldman, 95-100% RT across all seasons.",
+  "notes": "Apple TV+"
+    },
+    {
       "id": "severance",
       "title": "Severance",
       "tmdb_id": 95396,
