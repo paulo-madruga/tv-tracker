@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>SIGNAL // TV Tracker</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #191919;
+    --border: #242424;
+    --border2: #2e2e2e;
+    --text: #e8e8e8;
+    --text2: #888;
+    --text3: #555;
+    --accent: #c8f135;
+    --accent2: #8aab1e;
+    --red: #ff4444;
+    --orange: #ff8c42;
+    --blue: #4a9eff;
+    --mono: 'Space Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+
+  .logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+  }
+
+  .logo span { color: var(--text3); }
+
+  .header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .sync-status {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+  }
+
+  .sync-status.syncing { color: var(--accent); }
+  .sync-status.error { color: var(--red); }
+  .sync-status.ok { color: var(--accent2); }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+    background: var(--bg);
+    position: sticky;
+    top: 52px;
+    z-index: 99;
+  }
+
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    flex-shrink: 0;
+    padding: 12px 20px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text3);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-transform: uppercase;
+  }
+
+  .tab:hover { color: var(--text2); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .tab-count {
+    display: inline-block;
+    background: var(--surface2);
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 9px;
+    margin-left: 6px;
+    color: var(--text3);
+  }
+
+  .tab.active .tab-count { background: rgba(200,241,53,0.12); color: var(--accent); }
+
+  /* MAIN */
+  main { padding: 20px; max-width: 900px; margin: 0 auto; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--text3);
+    text-transform: uppercase;
+  }
+
+  /* CARDS */
+  .cards { display: flex; flex-direction: column; gap: 1px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: border-color 0.15s;
+    margin-bottom: 4px;
+  }
+
+  .card:hover { border-color: var(--border2); }
+
+  .card-main { flex: 1; min-width: 0; }
+
+  .card-title {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    margin-top: 3px;
+    letter-spacing: 0.03em;
+  }
+
+  .card-meta span { color: var(--text2); }
+
+  .card-blurb {
+    font-size: 12px;
+    color: var(--text2);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  /* BADGES */
+  .badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  .badge-excellent { background: rgba(200,241,53,0.12); color: var(--accent); border: 1px solid rgba(200,241,53,0.2); }
+  .badge-good { background: rgba(74,158,255,0.12); color: var(--blue); border: 1px solid rgba(74,158,255,0.2); }
+  .badge-notfav { background: rgba(255,140,66,0.12); color: var(--orange); border: 1px solid rgba(255,140,66,0.2); }
+  .badge-abandoned { background: rgba(255,68,68,0.10); color: var(--red); border: 1px solid rgba(255,68,68,0.2); }
+  .badge-ended { background: rgba(255,255,255,0.04); color: var(--text3); border: 1px solid var(--border); }
+  .badge-continuing { background: rgba(200,241,53,0.06); color: var(--accent2); border: 1px solid rgba(200,241,53,0.15); }
+
+  /* BUTTONS */
+  .btn {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 6px 12px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .btn:hover { opacity: 0.85; }
+  .btn:active { transform: scale(0.97); }
+
+  .btn-primary { background: var(--accent); color: #0a0a0a; }
+  .btn-ghost { background: var(--surface2); color: var(--text2); border: 1px solid var(--border2); }
+  .btn-danger { background: rgba(255,68,68,0.15); color: var(--red); border: 1px solid rgba(255,68,68,0.25); }
+  .btn-sm { padding: 4px 8px; font-size: 9px; }
+
+  /* EMPTY STATE */
+  .empty {
+    padding: 48px 20px;
+    text-align: center;
+    color: var(--text3);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(8px);
+    transition: transform 0.2s;
+  }
+
+  .modal-overlay.open .modal { transform: translateY(0); }
+
+  .modal-header {
+    padding: 20px 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .modal-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--text3);
+    text-transform: uppercase;
+  }
+
+  .modal-body { padding: 20px; }
+
+  .close-btn {
+    background: none;
+    border: none;
+    color: var(--text3);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 4px;
+  }
+
+  .close-btn:hover { color: var(--text); }
+
+  /* FORM */
+  .form-group { margin-bottom: 16px; }
+
+  label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border2);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    padding: 9px 12px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 80px; }
+  select option { background: var(--surface); }
+
+  .form-row { display: flex; gap: 12px; }
+  .form-row .form-group { flex: 1; }
+
+  .form-hint {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  .modal-footer {
+    padding: 0 20px 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  /* SETTINGS */
+  .settings-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .settings-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .settings-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .settings-row input { flex: 1; }
+
+  /* SEARCH */
+  .search-bar {
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .search-bar input {
+    padding-left: 36px;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text3);
+    font-size: 14px;
+    pointer-events: none;
+  }
+
+  /* RATING SELECT */
+  .rating-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .rating-pill {
+    padding: 6px 14px;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--text3);
+    text-transform: uppercase;
+    transition: all 0.15s;
+  }
+
+  .rating-pill:hover { border-color: var(--border2); color: var(--text2); }
+  .rating-pill.selected-excellent { background: rgba(200,241,53,0.12); color: var(--accent); border-color: rgba(200,241,53,0.3); }
+  .rating-pill.selected-good { background: rgba(74,158,255,0.12); color: var(--blue); border-color: rgba(74,158,255,0.3); }
+  .rating-pill.selected-notfav { background: rgba(255,140,66,0.12); color: var(--orange); border-color: rgba(255,140,66,0.3); }
+  .rating-pill.selected-abandoned { background: rgba(255,68,68,0.10); color: var(--red); border-color: rgba(255,68,68,0.3); }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    z-index: 300;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.25s;
+    max-width: 320px;
+  }
+
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.toast-ok { border-color: rgba(200,241,53,0.3); color: var(--accent); }
+  .toast.toast-err { border-color: rgba(255,68,68,0.3); color: var(--red); }
+
+  /* RECOMMENDATIONS */
+  .reco-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin-bottom: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reco-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+  }
+
+  .reco-rank {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    margin-bottom: 2px;
+  }
+
+  .reco-title { font-weight: 500; font-size: 15px; }
+
+  .reco-reason {
+    font-size: 12px;
+    color: var(--text2);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* FINISH MODAL SEASON INFO */
+  .season-route-info {
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 3px;
+    padding: 10px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text2);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .route-highlight { color: var(--accent); }
+
+  /* LOADING */
+  .spinner {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--border2);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hidden { display: none !important; }
+
+  /* TMDB SEARCH RESULTS */
+  .tmdb-results {
+    background: var(--bg);
+    border: 1px solid var(--border2);
+    border-radius: 3px;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .tmdb-result-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+
+  .tmdb-result-item:last-child { border-bottom: none; }
+  .tmdb-result-item:hover { background: var(--surface2); }
+
+  .tmdb-result-title { font-weight: 500; font-size: 13px; }
+
+  .tmdb-result-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .card { flex-direction: column; }
+    .card-actions { width: 100%; justify-content: flex-start; }
+    .form-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SIGNAL <span>// TV</span></div>
+  <div class="header-actions">
+    <span class="sync-status" id="syncStatus">—</span>
+    <button class="btn btn-ghost btn-sm" onclick="openSettings()">CONFIG</button>
+    <button class="btn btn-primary btn-sm" onclick="openAddModal()">+ ADD</button>
+  </div>
+</header>
+
+<div class="tabs" id="tabs">
+  <button class="tab active" data-tab="watching_now" onclick="switchTab('watching_now', this)">
+    Watching Now <span class="tab-count" id="count-watching_now">0</span>
+  </button>
+  <button class="tab" data-tab="available_to_watch_next" onclick="switchTab('available_to_watch_next', this)">
+    Available Next <span class="tab-count" id="count-available_to_watch_next">0</span>
+  </button>
+  <button class="tab" data-tab="waiting_for_next_season" onclick="switchTab('waiting_for_next_season', this)">
+    Waiting <span class="tab-count" id="count-waiting_for_next_season">0</span>
+  </button>
+  <button class="tab" data-tab="series_to_explore" onclick="switchTab('series_to_explore', this)">
+    Explore <span class="tab-count" id="count-series_to_explore">0</span>
+  </button>
+  <button class="tab" data-tab="claude_recommendations" onclick="switchTab('claude_recommendations', this)">
+    Recommended <span class="tab-count" id="count-claude_recommendations">0</span>
+  </button>
+  <button class="tab" data-tab="finished_watching" onclick="switchTab('finished_watching', this)">
+    Finished <span class="tab-count" id="count-finished_watching">0</span>
+  </button>
+</div>
+
+<main id="main">
+  <div class="section-header">
+    <span class="section-title" id="sectionTitle">Watching Now</span>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <div class="search-bar" style="margin-bottom:0;">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="searchInput" placeholder="Filter..." style="width:180px;" oninput="renderCurrentTab()">
+      </div>
+    </div>
+  </div>
+  <div id="content"></div>
+</main>
+
+<!-- SETTINGS MODAL -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Configuration</span>
+      <button class="close-btn" onclick="closeSettings()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="settings-block">
+        <div class="settings-label">GitHub Repository</div>
+        <div class="form-group">
+          <label>Owner / Repo</label>
+          <input type="text" id="cfgRepo" placeholder="username/repo-name">
+          <div class="form-hint">e.g. pmadruga/tv-tracker</div>
+        </div>
+        <div class="form-group">
+          <label>JSON File Path</label>
+          <input type="text" id="cfgPath" placeholder="shows.json">
+        </div>
+        <div class="form-group">
+          <label>Personal Access Token (PAT)</label>
+          <input type="password" id="cfgToken" placeholder="ghp_...">
+          <div class="form-hint">Stored locally in browser only. Needs repo read/write scope.</div>
+        </div>
+      </div>
+      <div class="settings-block">
+        <div class="settings-label">TMDB</div>
+        <div class="form-group">
+          <label>API Key (Read Access Token)</label>
+          <input type="password" id="cfgTmdb" placeholder="eyJ...">
+          <div class="form-hint">Free at themoviedb.org. Used to fetch season data.</div>
+        </div>
+      </div>
+      <div class="settings-block">
+        <div class="settings-label">Anthropic</div>
+        <div class="form-group">
+          <label>API Key</label>
+          <input type="password" id="cfgClaude" placeholder="sk-ant-...">
+          <div class="form-hint">Used by GitHub Action for weekly recommendations. Not used client-side.</div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeSettings()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveSettings()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD SHOW MODAL -->
+<div class="modal-overlay" id="addModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Add Show</span>
+      <button class="close-btn" onclick="closeAddModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Search Show</label>
+        <input type="text" id="addSearchInput" placeholder="Start typing..." oninput="debounceSearch(this.value)">
+        <div id="tmdbResults" class="tmdb-results hidden"></div>
+      </div>
+      <div id="addFormFields" class="hidden">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="addTitle" readonly>
+          </div>
+          <div class="form-group">
+            <label>TMDB ID</label>
+            <input type="text" id="addTmdbId" readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Total Seasons</label>
+            <input type="number" id="addTotalSeasons" min="1">
+          </div>
+          <div class="form-group">
+            <label>Status</label>
+            <select id="addStatus">
+              <option value="Continuing">Continuing</option>
+              <option value="Ended">Ended</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Add to List</label>
+          <select id="addList">
+            <option value="watching_now">Watching Now</option>
+            <option value="series_to_explore">Series to Explore</option>
+          </select>
+        </div>
+        <div id="addSeasonGroup" class="form-group">
+          <label>Starting Season</label>
+          <input type="number" id="addSeason" value="1" min="1">
+        </div>
+        <div class="form-group">
+          <label>Notes (optional)</label>
+          <textarea id="addNotes" placeholder="Why you're interested..."></textarea>
+        </div>
+        <div id="addBlurbGroup" class="form-group hidden">
+          <label>Blurb</label>
+          <textarea id="addBlurb" placeholder="Short description of the show..."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeAddModal()">Cancel</button>
+      <button class="btn btn-primary hidden" id="addConfirmBtn" onclick="confirmAdd()">Add Show</button>
+    </div>
+  </div>
+</div>
+
+<!-- FINISH SEASON MODAL -->
+<div class="modal-overlay" id="finishModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Finish Season</span>
+      <button class="close-btn" onclick="closeFinishModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div id="finishRouteInfo" class="season-route-info"></div>
+      <div id="finishRatingGroup">
+        <div class="form-group">
+          <label>Rate This Show</label>
+          <div class="rating-pills">
+            <div class="rating-pill" data-rating="Excellent" onclick="selectRating(this)">Excellent</div>
+            <div class="rating-pill" data-rating="Good" onclick="selectRating(this)">Good</div>
+            <div class="rating-pill" data-rating="Not My Favorites" onclick="selectRating(this)">Not My Favorites</div>
+            <div class="rating-pill" data-rating="Abandoned Halfway" onclick="selectRating(this)">Abandoned</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Notes (optional)</label>
+        <textarea id="finishNotes" placeholder="What worked, what didn't..."></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeFinishModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="confirmFinish()">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────────────────
+let DB = null;
+let currentTab = 'watching_now';
+let finishTarget = null;
+let selectedRating = null;
+let searchDebounce = null;
+let cfg = {};
+
+const TAB_LABELS = {
+  watching_now: 'Watching Now',
+  available_to_watch_next: 'Available Next',
+  waiting_for_next_season: 'Waiting for Next Season',
+  series_to_explore: 'Series to Explore',
+  claude_recommendations: 'Claude Recommendations',
+  finished_watching: 'Finished Watching'
+};
+
+// ── INIT ───────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  loadConfig();
+  loadData();
+});
+
+function loadConfig() {
+  try {
+    const saved = localStorage.getItem('signal_cfg');
+    if (saved) cfg = JSON.parse(saved);
+  } catch(e) {}
+}
+
+async function loadData() {
+  if (cfg.repo && cfg.token && cfg.path) {
+    await fetchFromGithub();
+  } else {
+    setSyncStatus('NO CONFIG', 'error');
+    // Load empty DB
+    DB = emptyDB();
+    render();
+  }
+}
+
+function emptyDB() {
+  return {
+    last_updated: new Date().toISOString(),
+    watching_now: [],
+    available_to_watch_next: [],
+    waiting_for_next_season: [],
+    series_to_explore: [],
+    claude_recommendations: [],
+    finished_watching: [],
+    taste_profile: {}
+  };
+}
+
+// ── GITHUB ─────────────────────────────────────────────────────────────────
+async function fetchFromGithub() {
+  setSyncStatus('SYNCING...', 'syncing');
+  try {
+    const res = await fetch(`https://api.github.com/repos/${cfg.repo}/contents/${cfg.path}`, {
+      headers: {
+        'Authorization': `Bearer ${cfg.token}`,
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+    if (!res.ok) throw new Error(`GitHub ${res.status}`);
+    const data = await res.json();
+    const content = atob(data.content.replace(/\n/g,''));
+    DB = JSON.parse(content);
+    DB._sha = data.sha; // store for updates
+    setSyncStatus('SYNCED', 'ok');
+    render();
+  } catch(e) {
+    setSyncStatus('SYNC ERROR', 'error');
+    toast('Failed to load from GitHub: ' + e.message, 'err');
+    DB = emptyDB();
+    render();
+  }
+}
+
+async function pushToGithub() {
+  if (!cfg.repo || !cfg.token || !cfg.path) {
+    toast('Configure GitHub in settings first.', 'err');
+    return false;
+  }
+  setSyncStatus('SAVING...', 'syncing');
+  try {
+    const sha = DB._sha;
+    const copy = Object.assign({}, DB);
+    delete copy._sha;
+    copy.last_updated = new Date().toISOString();
+
+    const body = {
+      message: `Update shows.json [${new Date().toISOString().slice(0,10)}]`,
+      content: btoa(unescape(encodeURIComponent(JSON.stringify(copy, null, 2)))),
+      sha: sha
+    };
+
+    const res = await fetch(`https://api.github.com/repos/${cfg.repo}/contents/${cfg.path}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${cfg.token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || res.status);
+    }
+
+    const result = await res.json();
+    DB._sha = result.content.sha;
+    setSyncStatus('SAVED', 'ok');
+    toast('Saved to GitHub.', 'ok');
+    return true;
+  } catch(e) {
+    setSyncStatus('SAVE ERROR', 'error');
+    toast('Failed to save: ' + e.message, 'err');
+    return false;
+  }
+}
+
+// ── TMDB ───────────────────────────────────────────────────────────────────
+async function tmdbSearch(query) {
+  if (!cfg.tmdb) return [];
+  try {
+    const res = await fetch(`https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(query)}&page=1`, {
+      headers: { 'Authorization': `Bearer ${cfg.tmdb}`, 'Accept': 'application/json' }
+    });
+    const data = await res.json();
+    return (data.results || []).slice(0, 8);
+  } catch(e) { return []; }
+}
+
+async function tmdbGetDetails(tmdbId) {
+  if (!cfg.tmdb) return null;
+  try {
+    const res = await fetch(`https://api.themoviedb.org/3/tv/${tmdbId}`, {
+      headers: { 'Authorization': `Bearer ${cfg.tmdb}`, 'Accept': 'application/json' }
+    });
+    return await res.json();
+  } catch(e) { return null; }
+}
+
+// ── RENDER ─────────────────────────────────────────────────────────────────
+function render() {
+  updateCounts();
+  renderCurrentTab();
+}
+
+function updateCounts() {
+  if (!DB) return;
+  Object.keys(TAB_LABELS).forEach(tab => {
+    const el = document.getElementById('count-' + tab);
+    if (el) el.textContent = (DB[tab] || []).length;
+  });
+}
+
+function renderCurrentTab() {
+  if (!DB) return;
+  const query = document.getElementById('searchInput').value.toLowerCase().trim();
+  document.getElementById('sectionTitle').textContent = TAB_LABELS[currentTab];
+  const content = document.getElementById('content');
+  const items = (DB[currentTab] || []).filter(item =>
+    !query || (item.title || '').toLowerCase().includes(query)
+  );
+
+  if (items.length === 0) {
+    content.innerHTML = `<div class="empty">NO SHOWS IN THIS LIST</div>`;
+    return;
+  }
+
+  let html = '<div class="cards">';
+
+  if (currentTab === 'watching_now') {
+    html += items.map(s => cardWatchingNow(s)).join('');
+  } else if (currentTab === 'available_to_watch_next') {
+    html += items.map(s => cardAvailable(s)).join('');
+  } else if (currentTab === 'waiting_for_next_season') {
+    html += items.map(s => cardWaiting(s)).join('');
+  } else if (currentTab === 'series_to_explore') {
+    html += items.map(s => cardExplore(s)).join('');
+  } else if (currentTab === 'claude_recommendations') {
+    html += items.map((s, i) => cardReco(s, i)).join('');
+  } else if (currentTab === 'finished_watching') {
+    html += items.map(s => cardFinished(s)).join('');
+  }
+
+  html += '</div>';
+  content.innerHTML = html;
+}
+
+function cardWatchingNow(s) {
+  return `<div class="card">
+    <div class="card-main">
+      <div class="card-title">${esc(s.title)}</div>
+      <div class="card-meta">Season <span>${s.current_season}</span> of <span>${s.total_seasons}</span> · ${statusBadge(s.show_status)}</div>
+      ${s.notes ? `<div class="card-blurb">${esc(s.notes)}</div>` : ''}
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-ghost btn-sm" onclick="openFinishModal('${s.id}')">FINISH SEASON</button>
+      <button class="btn btn-danger btn-sm" onclick="abandonShow('${s.id}')">ABANDON</button>
+    </div>
+  </div>`;
+}
+
+function cardAvailable(s) {
+  return `<div class="card">
+    <div class="card-main">
+      <div class="card-title">${esc(s.title)}</div>
+      <div class="card-meta">Season <span>${s.next_season}</span> available · <span>${s.total_seasons}</span> total seasons · ${statusBadge(s.show_status)}</div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-primary btn-sm" onclick="startWatching('${s.id}')">START WATCHING</button>
+    </div>
+  </div>`;
+}
+
+function cardWaiting(s) {
+  return `<div class="card">
+    <div class="card-main">
+      <div class="card-title">${esc(s.title)}</div>
+      <div class="card-meta">Watched through S<span>${s.seasons_watched}</span> · Waiting for S<span>${s.seasons_watched + 1}</span> · ${statusBadge(s.show_status)}</div>
+      ${s.expected_date ? `<div class="card-blurb">Expected: ${s.expected_date}</div>` : ''}
+    </div>
+    <div class="card-actions">
+      <span class="badge badge-ended">WAITING</span>
+    </div>
+  </div>`;
+}
+
+function cardExplore(s) {
+  return `<div class="card">
+    <div class="card-main">
+      <div class="card-title">${esc(s.title)}</div>
+      <div class="card-meta"><span>${s.total_seasons || '?'}</span> seasons · ${statusBadge(s.show_status)}</div>
+      ${s.blurb ? `<div class="card-blurb">${esc(s.blurb)}</div>` : ''}
+      ${s.notes ? `<div class="card-blurb" style="color:var(--text3);font-size:11px;">via: ${esc(s.notes)}</div>` : ''}
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-primary btn-sm" onclick="startFromExplore('${s.id}')">WATCH NOW</button>
+      <button class="btn btn-ghost btn-sm" onclick="removeFromExplore('${s.id}')">REMOVE</button>
+    </div>
+  </div>`;
+}
+
+function cardReco(s, i) {
+  return `<div class="reco-card">
+    <div class="reco-rank">#${i+1} RECOMMENDED</div>
+    <div class="reco-title">${esc(s.title)}</div>
+    <div class="card-meta" style="margin-top:4px;">${s.total_seasons ? `<span>${s.total_seasons}</span> seasons · ` : ''}${statusBadge(s.show_status)}</div>
+    ${s.reason ? `<div class="reco-reason">${esc(s.reason)}</div>` : ''}
+    <div style="margin-top:10px;display:flex;gap:6px;">
+      <button class="btn btn-primary btn-sm" onclick="startFromReco('${s.id}')">WATCH NOW</button>
+      <button class="btn btn-ghost btn-sm" onclick="addRecoToExplore('${s.id}')">ADD TO EXPLORE</button>
+      <button class="btn btn-ghost btn-sm" onclick="dismissReco('${s.id}')">DISMISS</button>
+    </div>
+  </div>`;
+}
+
+function cardFinished(s) {
+  const ratingClass = {
+    'Excellent': 'badge-excellent',
+    'Good': 'badge-good',
+    'Not My Favorites': 'badge-notfav',
+    'Abandoned Halfway': 'badge-abandoned'
+  }[s.rating] || 'badge-ended';
+
+  return `<div class="card">
+    <div class="card-main">
+      <div class="card-title">${esc(s.title)}</div>
+      <div class="card-meta">S<span>${s.seasons_watched}</span> watched${s.date_finished ? ` · ${s.date_finished.slice(0,10)}` : ''}</div>
+      ${s.notes ? `<div class="card-blurb">${esc(s.notes)}</div>` : ''}
+    </div>
+    <div class="card-actions">
+      <span class="badge ${ratingClass}">${esc(s.rating)}</span>
+    </div>
+  </div>`;
+}
+
+function statusBadge(status) {
+  if (!status) return '';
+  const cls = status === 'Ended' ? 'badge-ended' : 'badge-continuing';
+  return `<span class="badge ${cls}">${status.toUpperCase()}</span>`;
+}
+
+function esc(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── TABS ───────────────────────────────────────────────────────────────────
+function switchTab(tab, el) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  renderCurrentTab();
+}
+
+// ── ACTIONS ────────────────────────────────────────────────────────────────
+
+// Start watching from Available Next
+async function startWatching(id) {
+  const show = DB.available_to_watch_next.find(s => s.id === id);
+  if (!show) return;
+  DB.available_to_watch_next = DB.available_to_watch_next.filter(s => s.id !== id);
+  DB.watching_now.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    current_season: show.next_season,
+    total_seasons: show.total_seasons,
+    show_status: show.show_status,
+    notes: show.notes || ''
+  });
+  render();
+  await pushToGithub();
+}
+
+// Start from Explore list
+async function startFromExplore(id) {
+  const show = DB.series_to_explore.find(s => s.id === id);
+  if (!show) return;
+  DB.series_to_explore = DB.series_to_explore.filter(s => s.id !== id);
+  DB.watching_now.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    current_season: 1,
+    total_seasons: show.total_seasons,
+    show_status: show.show_status,
+    notes: show.notes || ''
+  });
+  render();
+  await pushToGithub();
+}
+
+// Start from Reco list
+async function startFromReco(id) {
+  const show = DB.claude_recommendations.find(s => s.id === id);
+  if (!show) return;
+  DB.claude_recommendations = DB.claude_recommendations.filter(s => s.id !== id);
+  DB.watching_now.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    current_season: 1,
+    total_seasons: show.total_seasons,
+    show_status: show.show_status,
+    notes: ''
+  });
+  render();
+  await pushToGithub();
+}
+
+async function addRecoToExplore(id) {
+  const show = DB.claude_recommendations.find(s => s.id === id);
+  if (!show) return;
+  DB.claude_recommendations = DB.claude_recommendations.filter(s => s.id !== id);
+  DB.series_to_explore.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    total_seasons: show.total_seasons,
+    show_status: show.show_status,
+    blurb: show.reason || '',
+    notes: 'From Claude recommendations'
+  });
+  render();
+  await pushToGithub();
+}
+
+async function dismissReco(id) {
+  DB.claude_recommendations = DB.claude_recommendations.filter(s => s.id !== id);
+  render();
+  await pushToGithub();
+}
+
+async function removeFromExplore(id) {
+  DB.series_to_explore = DB.series_to_explore.filter(s => s.id !== id);
+  render();
+  await pushToGithub();
+}
+
+// Abandon
+async function abandonShow(id) {
+  if (!confirm('Mark this show as abandoned? This cannot be undone.')) return;
+  const show = DB.watching_now.find(s => s.id === id);
+  if (!show) return;
+  DB.watching_now = DB.watching_now.filter(s => s.id !== id);
+  // Remove existing finished entry if any
+  DB.finished_watching = DB.finished_watching.filter(s => s.id !== id);
+  DB.finished_watching.unshift({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    rating: 'Abandoned Halfway',
+    seasons_watched: show.current_season,
+    total_seasons: show.total_seasons,
+    status: show.show_status,
+    notes: '',
+    date_finished: new Date().toISOString().slice(0,10)
+  });
+  render();
+  await pushToGithub();
+}
+
+// ── FINISH SEASON MODAL ────────────────────────────────────────────────────
+function openFinishModal(id) {
+  const show = DB.watching_now.find(s => s.id === id);
+  if (!show) return;
+  finishTarget = show;
+  selectedRating = null;
+
+  const isLastSeason = show.current_season >= show.total_seasons;
+  const isShowEnded = show.show_status === 'Ended';
+  const showEnds = isLastSeason && isShowEnded;
+  const moreAvailable = !isLastSeason;
+  const waitingForMore = isLastSeason && !isShowEnded;
+
+  let routeText = '';
+  let showRating = false;
+
+  if (showEnds) {
+    routeText = `<span class="route-highlight">Final season.</span> Show is complete. You'll rate it and it moves to <span class="route-highlight">Finished Watching</span>.`;
+    showRating = true;
+  } else if (moreAvailable) {
+    routeText = `Season ${show.current_season} of ${show.total_seasons}. Next season already available — moves to <span class="route-highlight">Available Next</span>.`;
+    showRating = false;
+  } else if (waitingForMore) {
+    routeText = `Current with latest season. Show still in production — moves to <span class="route-highlight">Waiting for Next Season</span>.`;
+    showRating = false;
+  }
+
+  document.getElementById('finishRouteInfo').innerHTML = routeText;
+  document.getElementById('finishRatingGroup').style.display = showRating ? '' : 'none';
+  document.querySelectorAll('.rating-pill').forEach(p => p.className = 'rating-pill');
+  document.getElementById('finishNotes').value = '';
+  document.getElementById('finishModal').classList.add('open');
+}
+
+function closeFinishModal() {
+  document.getElementById('finishModal').classList.remove('open');
+  finishTarget = null;
+}
+
+function selectRating(el) {
+  document.querySelectorAll('.rating-pill').forEach(p => p.className = 'rating-pill');
+  selectedRating = el.dataset.rating;
+  const cls = {
+    'Excellent': 'selected-excellent',
+    'Good': 'selected-good',
+    'Not My Favorites': 'selected-notfav',
+    'Abandoned Halfway': 'selected-abandoned'
+  }[selectedRating];
+  el.classList.add(cls);
+}
+
+async function confirmFinish() {
+  const show = finishTarget;
+  if (!show) return;
+
+  const notes = document.getElementById('finishNotes').value.trim();
+  const isLastSeason = show.current_season >= show.total_seasons;
+  const isShowEnded = show.show_status === 'Ended';
+  const showEnds = isLastSeason && isShowEnded;
+  const moreAvailable = !isLastSeason;
+
+  if (showEnds && !selectedRating) {
+    toast('Select a rating first.', 'err');
+    return;
+  }
+
+  DB.watching_now = DB.watching_now.filter(s => s.id !== show.id);
+
+  if (showEnds) {
+    DB.finished_watching = DB.finished_watching.filter(s => s.id !== show.id);
+    DB.finished_watching.unshift({
+      id: show.id,
+      title: show.title,
+      tmdb_id: show.tmdb_id,
+      rating: selectedRating,
+      seasons_watched: show.current_season,
+      total_seasons: show.total_seasons,
+      status: show.show_status,
+      notes: notes,
+      date_finished: new Date().toISOString().slice(0,10)
+    });
+  } else if (moreAvailable) {
+    DB.available_to_watch_next = DB.available_to_watch_next.filter(s => s.id !== show.id);
+    DB.available_to_watch_next.push({
+      id: show.id,
+      title: show.title,
+      tmdb_id: show.tmdb_id,
+      next_season: show.current_season + 1,
+      total_seasons: show.total_seasons,
+      show_status: show.show_status,
+      notes: notes
+    });
+  } else {
+    DB.waiting_for_next_season = DB.waiting_for_next_season.filter(s => s.id !== show.id);
+    DB.waiting_for_next_season.push({
+      id: show.id,
+      title: show.title,
+      tmdb_id: show.tmdb_id,
+      seasons_watched: show.current_season,
+      total_seasons: show.total_seasons,
+      show_status: show.show_status,
+      notes: notes,
+      expected_date: null
+    });
+  }
+
+  closeFinishModal();
+  render();
+  await pushToGithub();
+}
+
+// ── ADD SHOW MODAL ─────────────────────────────────────────────────────────
+function openAddModal() {
+  document.getElementById('addSearchInput').value = '';
+  document.getElementById('tmdbResults').innerHTML = '';
+  document.getElementById('tmdbResults').classList.add('hidden');
+  document.getElementById('addFormFields').classList.add('hidden');
+  document.getElementById('addConfirmBtn').classList.add('hidden');
+  document.getElementById('addModal').classList.add('open');
+}
+
+function closeAddModal() {
+  document.getElementById('addModal').classList.remove('open');
+}
+
+function debounceSearch(val) {
+  clearTimeout(searchDebounce);
+  if (val.length < 2) {
+    document.getElementById('tmdbResults').classList.add('hidden');
+    return;
+  }
+  searchDebounce = setTimeout(() => runTmdbSearch(val), 400);
+}
+
+async function runTmdbSearch(query) {
+  const results = await tmdbSearch(query);
+  const container = document.getElementById('tmdbResults');
+  if (!results.length) {
+    container.innerHTML = '<div class="tmdb-result-item" style="color:var(--text3);">No results</div>';
+  } else {
+    container.innerHTML = results.map(r => `
+      <div class="tmdb-result-item" onclick="selectTmdbShow(${r.id}, '${esc(r.name)}', ${r.number_of_seasons || 0}, '${r.status || ''}', '${esc(r.overview || '')}')">
+        <div class="tmdb-result-title">${esc(r.name)}</div>
+        <div class="tmdb-result-meta">${r.first_air_date ? r.first_air_date.slice(0,4) : '?'} · ${r.number_of_seasons || '?'} seasons</div>
+      </div>
+    `).join('');
+  }
+  container.classList.remove('hidden');
+}
+
+function selectTmdbShow(tmdbId, title, totalSeasons, status, overview) {
+  document.getElementById('addTmdbId').value = tmdbId;
+  document.getElementById('addTitle').value = title;
+  document.getElementById('addTotalSeasons').value = totalSeasons || 1;
+  document.getElementById('addStatus').value = (status === 'Ended') ? 'Ended' : 'Continuing';
+  document.getElementById('addBlurb').value = overview || '';
+  document.getElementById('tmdbResults').classList.add('hidden');
+  document.getElementById('addFormFields').classList.remove('hidden');
+  document.getElementById('addConfirmBtn').classList.remove('hidden');
+  updateAddListUI();
+}
+
+function updateAddListUI() {
+  const list = document.getElementById('addList').value;
+  document.getElementById('addSeasonGroup').style.display = list === 'watching_now' ? '' : 'none';
+  document.getElementById('addBlurbGroup').style.display = list === 'series_to_explore' ? '' : 'none';
+}
+
+document.getElementById('addList').addEventListener('change', updateAddListUI);
+
+async function confirmAdd() {
+  const title = document.getElementById('addTitle').value.trim();
+  const tmdbId = parseInt(document.getElementById('addTmdbId').value);
+  const totalSeasons = parseInt(document.getElementById('addTotalSeasons').value) || 1;
+  const status = document.getElementById('addStatus').value;
+  const list = document.getElementById('addList').value;
+  const notes = document.getElementById('addNotes').value.trim();
+  const blurb = document.getElementById('addBlurb').value.trim();
+  const season = parseInt(document.getElementById('addSeason').value) || 1;
+
+  if (!title) { toast('No show selected.', 'err'); return; }
+
+  const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  // Dedup check
+  const allLists = ['watching_now','available_to_watch_next','waiting_for_next_season','series_to_explore','claude_recommendations','finished_watching'];
+  for (const l of allLists) {
+    if ((DB[l] || []).find(s => s.id === id || s.tmdb_id === tmdbId)) {
+      toast('Show already in tracker.', 'err');
+      return;
+    }
+  }
+
+  if (list === 'watching_now') {
+    DB.watching_now.push({ id, title, tmdb_id: tmdbId, current_season: season, total_seasons: totalSeasons, show_status: status, notes });
+  } else {
+    DB.series_to_explore.push({ id, title, tmdb_id: tmdbId, total_seasons: totalSeasons, show_status: status, blurb, notes });
+  }
+
+  closeAddModal();
+  render();
+  await pushToGithub();
+}
+
+// ── SETTINGS ───────────────────────────────────────────────────────────────
+function openSettings() {
+  document.getElementById('cfgRepo').value = cfg.repo || '';
+  document.getElementById('cfgPath').value = cfg.path || 'shows.json';
+  document.getElementById('cfgToken').value = cfg.token || '';
+  document.getElementById('cfgTmdb').value = cfg.tmdb || '';
+  document.getElementById('cfgClaude').value = cfg.claude || '';
+  document.getElementById('settingsModal').classList.add('open');
+}
+
+function closeSettings() {
+  document.getElementById('settingsModal').classList.remove('open');
+}
+
+async function saveSettings() {
+  cfg = {
+    repo: document.getElementById('cfgRepo').value.trim(),
+    path: document.getElementById('cfgPath').value.trim() || 'shows.json',
+    token: document.getElementById('cfgToken').value.trim(),
+    tmdb: document.getElementById('cfgTmdb').value.trim(),
+    claude: document.getElementById('cfgClaude').value.trim()
+  };
+  localStorage.setItem('signal_cfg', JSON.stringify(cfg));
+  closeSettings();
+  toast('Settings saved. Loading data...', 'ok');
+  await fetchFromGithub();
+}
+
+// ── HELPERS ────────────────────────────────────────────────────────────────
+function setSyncStatus(text, state) {
+  const el = document.getElementById('syncStatus');
+  el.textContent = text;
+  el.className = 'sync-status ' + (state || '');
+}
+
+function toast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + (type === 'err' ? 'toast-err' : type === 'ok' ? 'toast-ok' : '');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// Close modals on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+});
+</script>
+
+<!-- PWA Service Worker registration -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+</script>
+
+</body>
+</html>

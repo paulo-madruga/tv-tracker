@@ -1,0 +1,271 @@
+{
+  "last_updated": "2026-02-24T00:00:00Z",
+  "watching_now": [],
+  "available_to_watch_next": [],
+  "waiting_for_next_season": [],
+  "series_to_explore": [],
+  "claude_recommendations": [],
+  "finished_watching": [
+    {
+      "id": "dark",
+      "title": "Dark",
+      "tmdb_id": 70523,
+      "rating": "Excellent",
+      "seasons_watched": 3,
+      "total_seasons": 3,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "mr-robot",
+      "title": "Mr. Robot",
+      "tmdb_id": 62560,
+      "rating": "Excellent",
+      "seasons_watched": 4,
+      "total_seasons": 4,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "midnight-mass",
+      "title": "Midnight Mass",
+      "tmdb_id": 130542,
+      "rating": "Excellent",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "breaking-bad",
+      "title": "Breaking Bad",
+      "tmdb_id": 1396,
+      "rating": "Excellent",
+      "seasons_watched": 5,
+      "total_seasons": 5,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "better-call-saul",
+      "title": "Better Call Saul",
+      "tmdb_id": 60059,
+      "rating": "Excellent",
+      "seasons_watched": 6,
+      "total_seasons": 6,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "succession",
+      "title": "Succession",
+      "tmdb_id": 76331,
+      "rating": "Excellent",
+      "seasons_watched": 4,
+      "total_seasons": 4,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "shogun",
+      "title": "Shogun",
+      "tmdb_id": 126308,
+      "rating": "Excellent",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "band-of-brothers",
+      "title": "Band of Brothers",
+      "tmdb_id": 4613,
+      "rating": "Excellent",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "chernobyl",
+      "title": "Chernobyl",
+      "tmdb_id": 87108,
+      "rating": "Excellent",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "man-in-the-high-castle",
+      "title": "The Man in the High Castle",
+      "tmdb_id": 62017,
+      "rating": "Excellent",
+      "seasons_watched": 4,
+      "total_seasons": 4,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "battlestar-galactica",
+      "title": "Battlestar Galactica",
+      "tmdb_id": 1418,
+      "rating": "Excellent",
+      "seasons_watched": 4,
+      "total_seasons": 4,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "queens-gambit",
+      "title": "The Queen's Gambit",
+      "tmdb_id": 87739,
+      "rating": "Excellent",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "westworld",
+      "title": "Westworld",
+      "tmdb_id": 63247,
+      "rating": "Good",
+      "seasons_watched": 2,
+      "total_seasons": 4,
+      "status": "Ended",
+      "notes": "Good concept but drift after S2",
+      "date_finished": null
+    },
+    {
+      "id": "altered-carbon",
+      "title": "Altered Carbon",
+      "tmdb_id": 68421,
+      "rating": "Good",
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "status": "Ended",
+      "notes": "Uneven execution",
+      "date_finished": null
+    },
+    {
+      "id": "lovecraft-country",
+      "title": "Lovecraft Country",
+      "tmdb_id": 91720,
+      "rating": "Good",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "dracula",
+      "title": "Dracula",
+      "tmdb_id": 91827,
+      "rating": "Good",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "barbarians",
+      "title": "Barbarians",
+      "tmdb_id": 106393,
+      "rating": "Good",
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": null
+    },
+    {
+      "id": "stranger-things",
+      "title": "Stranger Things",
+      "tmdb_id": 66732,
+      "rating": "Abandoned Halfway",
+      "seasons_watched": 2,
+      "total_seasons": 5,
+      "status": "Ended",
+      "notes": "Loved S1. Dropped mid-S2 onward — too many characters, plot sprawl",
+      "date_finished": null
+    },
+    {
+      "id": "true-detective",
+      "title": "True Detective",
+      "tmdb_id": 46648,
+      "rating": "Abandoned Halfway",
+      "seasons_watched": 0,
+      "total_seasons": 4,
+      "status": "Ended",
+      "notes": "Too atmospheric / vibe-driven, not arc-driven",
+      "date_finished": null
+    },
+    {
+      "id": "the-expanse",
+      "title": "The Expanse",
+      "tmdb_id": 63639,
+      "rating": "Abandoned Halfway",
+      "seasons_watched": 2,
+      "total_seasons": 6,
+      "status": "Ended",
+      "notes": "Slow and sprawling",
+      "date_finished": null
+    },
+    {
+      "id": "the-witcher",
+      "title": "The Witcher",
+      "tmdb_id": 71912,
+      "rating": "Abandoned Halfway",
+      "seasons_watched": 3,
+      "total_seasons": 3,
+      "status": "Ended",
+      "notes": "Quality drift + bloated worldbuilding",
+      "date_finished": null
+    }
+  ],
+  "taste_profile": {
+    "prefers": [
+      "tight narrative arcs",
+      "season-long momentum",
+      "minimal filler",
+      "controlled cast size",
+      "thematic coherence",
+      "morally complex characters",
+      "dark tone",
+      "sci-fi dystopia",
+      "tech paranoia",
+      "espionage",
+      "political power struggles",
+      "survival thrillers"
+    ],
+    "avoids": [
+      "anthology format",
+      "slow-burn with unclear payoff",
+      "expanding ensemble casts",
+      "mystery-box without resolution",
+      "mythology sprawl",
+      "repetitive seasonal resets"
+    ],
+    "red_flags": [
+      "cast bloat per season",
+      "filler episodes",
+      "vibe over arc",
+      "subplots that don't feed main narrative"
+    ]
+  }
+}
