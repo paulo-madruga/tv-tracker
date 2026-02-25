@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-24T00:00:00Z",
+  "last_updated": "2026-02-25T03:48:18.224756+00:00",
   "watching_now": [
     {
       "id": "shrinking",
@@ -56,6 +56,42 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "notes": ""
+    },
+    {
+      "id": "house-of-the-dragon",
+      "title": "House of the Dragon",
+      "tmdb_id": 94997,
+      "next_season": 3,
+      "total_seasons": 3,
+      "show_status": "Returning Series",
+      "notes": "HBO"
+    },
+    {
+      "id": "alien-earth",
+      "title": "Alien: Earth",
+      "tmdb_id": 202555,
+      "next_season": 2,
+      "total_seasons": 2,
+      "show_status": "Returning Series",
+      "notes": "Hulu"
+    },
+    {
+      "id": "rings-of-power",
+      "title": "Lord of the Rings: The Rings of Power",
+      "tmdb_id": 84773,
+      "next_season": 3,
+      "total_seasons": 3,
+      "show_status": "Returning Series",
+      "notes": ""
+    },
+    {
+      "id": "fallout",
+      "title": "Fallout",
+      "tmdb_id": 106379,
+      "next_season": 2,
+      "total_seasons": 2,
+      "show_status": "Returning Series",
+      "notes": ""
     }
   ],
   "waiting_for_next_season": [
@@ -65,7 +101,7 @@
       "tmdb_id": 114479,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
+      "show_status": "Canceled",
       "notes": "Unconfirmed — Disney+",
       "expected_date": null
     },
@@ -74,20 +110,10 @@
       "title": "Formula 1: Drive to Survive",
       "tmdb_id": 81086,
       "seasons_watched": 7,
-      "total_seasons": 7,
-      "show_status": "Continuing",
+      "total_seasons": 2,
+      "show_status": "Ended",
       "notes": "Netflix",
       "expected_date": "March 2026"
-    },
-    {
-      "id": "house-of-the-dragon",
-      "title": "House of the Dragon",
-      "tmdb_id": 94997,
-      "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
-      "notes": "HBO",
-      "expected_date": null
     },
     {
       "id": "ahsoka",
@@ -95,7 +121,7 @@
       "tmdb_id": 114461,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "Disney+",
       "expected_date": "2026"
     },
@@ -105,7 +131,7 @@
       "tmdb_id": 100088,
       "seasons_watched": 2,
       "total_seasons": 2,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "HBO",
       "expected_date": "2027"
     },
@@ -115,7 +141,7 @@
       "tmdb_id": 108978,
       "seasons_watched": 3,
       "total_seasons": 3,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "Prime Video — pre-production underway",
       "expected_date": "2026"
     },
@@ -124,45 +150,15 @@
       "title": "Quarterback",
       "tmdb_id": 228891,
       "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
-      "notes": "Netflix — S3 not yet announced",
-      "expected_date": null
-    },
-    {
-      "id": "alien-earth",
-      "title": "Alien: Earth",
-      "tmdb_id": 202555,
-      "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": "Hulu",
-      "expected_date": null
-    },
-    {
-      "id": "rings-of-power",
-      "title": "Lord of the Rings: The Rings of Power",
-      "tmdb_id": 84773,
-      "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
-      "notes": "",
+      "show_status": "Returning Series",
+      "notes": "Netflix — S3 not yet announced",
       "expected_date": null
     },
     {
       "id": "pluribus",
       "title": "Pluribus",
       "tmdb_id": null,
-      "seasons_watched": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": "",
-      "expected_date": null
-    },
-    {
-      "id": "fallout",
-      "title": "Fallout",
-      "tmdb_id": 106379,
       "seasons_watched": 1,
       "total_seasons": 1,
       "show_status": "Continuing",
@@ -289,7 +285,32 @@
       "notes": "Netflix — S1: 84% RT"
     }
   ],
-  "claude_recommendations": [],
+  "claude_recommendations": [
+    {
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 2406,
+      "total_seasons": 6,
+      "show_status": "Ended",
+      "reason": "Cold War espionage thriller with morally complex Soviet deep-cover agents, featuring tight narrative control and every episode advancing the central arc. Dark tone with controlled cast exploring themes of identity, loyalty, and survival under constant threat of exposure."
+    },
+    {
+      "id": "black-mirror",
+      "title": "Black Mirror",
+      "tmdb_id": 42009,
+      "total_seasons": 6,
+      "show_status": "Continuing",
+      "reason": "Tech paranoia dystopian series with dark moral complexity and intelligent writing exploring technology's impact on humanity. Each standalone episode delivers complete narrative arcs with clear payoffs, avoiding sprawl while maintaining thematic coherence."
+    },
+    {
+      "id": "mare-of-easttown",
+      "title": "Mare of Easttown",
+      "tmdb_id": 85552,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "reason": "Tightly constructed murder mystery with dark tone and morally complex characters in a controlled small-town setting. Every episode advances the central investigation with clear narrative momentum and intelligent writing that delivers satisfying resolution."
+    }
+  ],
   "finished_watching": [
     {
       "id": "dark",
