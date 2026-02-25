@@ -1,43 +1,295 @@
 {
-  "last_updated": "2026-02-25T03:41:42.313407+00:00",
-  "watching_now": [],
-  "available_to_watch_next": [],
-  "waiting_for_next_season": [],
-  "series_to_explore": [],
-  "claude_recommendations": [
+  "last_updated": "2026-02-24T00:00:00Z",
+  "watching_now": [
     {
-      "id": "the-americans",
-      "title": "The Americans",
-      "tmdb_id": 2406,
-      "total_seasons": 6,
-      "show_status": "Ended",
-      "reason": "Cold War espionage thriller with morally complex Russian sleeper agents living undercover in America. Maintains tight narrative focus across all six seasons with every episode advancing the central arc of their deteriorating cover and family dynamics."
+      "id": "shrinking",
+      "title": "Shrinking",
+      "tmdb_id": 136315,
+      "current_season": 3,
+      "total_seasons": 3,
+      "show_status": "Continuing",
+      "notes": ""
     },
+    {
+      "id": "mindhunter",
+      "title": "Mindhunter",
+      "tmdb_id": 67744,
+      "current_season": 2,
+      "total_seasons": 2,
+      "show_status": "Ended",
+      "notes": "Final season"
+    }
+  ],
+  "available_to_watch_next": [
+    {
+      "id": "foundation",
+      "title": "Foundation",
+      "tmdb_id": 93740,
+      "next_season": 3,
+      "total_seasons": 3,
+      "show_status": "Continuing",
+      "notes": ""
+    },
+    {
+      "id": "andor",
+      "title": "Star Wars: Andor",
+      "tmdb_id": 83867,
+      "next_season": 2,
+      "total_seasons": 2,
+      "show_status": "Ended",
+      "notes": "Watch Rogue One afterwards"
+    },
+    {
+      "id": "dune-prophecy",
+      "title": "Dune: Prophecy",
+      "tmdb_id": 215748,
+      "next_season": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": ""
+    },
+    {
+      "id": "a-knight-of-the-seven-kingdoms",
+      "title": "A Knight of the Seven Kingdoms",
+      "tmdb_id": 209867,
+      "next_season": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": ""
+    }
+  ],
+  "waiting_for_next_season": [
+    {
+      "id": "skeleton-crew",
+      "title": "Star Wars: Skeleton Crew",
+      "tmdb_id": 114479,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "Unconfirmed — Disney+",
+      "expected_date": null
+    },
+    {
+      "id": "formula-1-drive-to-survive",
+      "title": "Formula 1: Drive to Survive",
+      "tmdb_id": 81086,
+      "seasons_watched": 7,
+      "total_seasons": 7,
+      "show_status": "Continuing",
+      "notes": "Netflix",
+      "expected_date": "March 2026"
+    },
+    {
+      "id": "house-of-the-dragon",
+      "title": "House of the Dragon",
+      "tmdb_id": 94997,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "HBO",
+      "expected_date": null
+    },
+    {
+      "id": "ahsoka",
+      "title": "Ahsoka",
+      "tmdb_id": 114461,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "Disney+",
+      "expected_date": "2026"
+    },
+    {
+      "id": "the-last-of-us",
+      "title": "The Last of Us",
+      "tmdb_id": 100088,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "HBO",
+      "expected_date": "2027"
+    },
+    {
+      "id": "reacher",
+      "title": "Reacher",
+      "tmdb_id": 108978,
+      "seasons_watched": 3,
+      "total_seasons": 3,
+      "show_status": "Continuing",
+      "notes": "Prime Video — pre-production underway",
+      "expected_date": "2026"
+    },
+    {
+      "id": "quarterback",
+      "title": "Quarterback",
+      "tmdb_id": 228891,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "Netflix — S3 not yet announced",
+      "expected_date": null
+    },
+    {
+      "id": "alien-earth",
+      "title": "Alien: Earth",
+      "tmdb_id": 202555,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "Hulu",
+      "expected_date": null
+    },
+    {
+      "id": "rings-of-power",
+      "title": "Lord of the Rings: The Rings of Power",
+      "tmdb_id": 84773,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "pluribus",
+      "title": "Pluribus",
+      "tmdb_id": null,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "fallout",
+      "title": "Fallout",
+      "tmdb_id": 106379,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
+    }
+  ],
+  "series_to_explore": [
     {
       "id": "severance",
       "title": "Severance",
       "tmdb_id": 95396,
-      "total_seasons": 1,
+      "total_seasons": 2,
       "show_status": "Continuing",
-      "reason": "Tech paranoia thriller exploring corporate dystopia where employees surgically separate work and personal memories. Features the controlled cast and psychological complexity of Mr. Robot with every episode building toward revelations about the sinister Lumon corporation."
+      "blurb": "A darkly satirical sci-fi thriller where employees 'sever' their memories between work and home, exploring corporate control and autonomy with tension and strong arcs.",
+      "notes": "Apple TV+"
     },
     {
-      "id": "mare-of-easttown",
-      "title": "Mare of Easttown",
-      "tmdb_id": 85552,
-      "total_seasons": 1,
+      "id": "the-leftovers",
+      "title": "The Leftovers",
+      "tmdb_id": 54344,
+      "total_seasons": 3,
       "show_status": "Ended",
-      "reason": "Tightly constructed murder mystery with morally complex protagonist investigating crime in a small Pennsylvania town. Limited series format ensures no filler with each episode methodically advancing the investigation while exploring character depths."
+      "blurb": "Explores grief and faith after a sudden global disappearance. Emotionally intense with complex characters.",
+      "notes": "HBO — S1: 82% RT"
     },
     {
       "id": "the-terror",
       "title": "The Terror",
-      "tmdb_id": 75191,
+      "tmdb_id": 71965,
       "total_seasons": 2,
       "show_status": "Ended",
-      "reason": "Survival thriller following Franklin Expedition trapped in Arctic ice with supernatural horror elements. Season one maintains tight narrative focus on the doomed crew's deteriorating situation without sprawl or cast bloat."
+      "blurb": "Horror blending historical expeditions with supernatural dread. S1 survival story echoes dystopian and morally fraught narratives.",
+      "notes": "AMC — S1: 94% RT, S2: 80% RT"
+    },
+    {
+      "id": "fargo",
+      "title": "Fargo",
+      "tmdb_id": 60622,
+      "total_seasons": 5,
+      "show_status": "Continuing",
+      "blurb": "Anthological crime drama blending dark humor with moral dilemmas. Each season is a fresh self-contained story.",
+      "notes": "FX/Hulu — S1: 97% RT. Note: anthology format per season."
+    },
+    {
+      "id": "station-eleven",
+      "title": "Station Eleven",
+      "tmdb_id": 91239,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "blurb": "Post-apocalyptic drama linking survivors after a flu pandemic. Combines survival themes with hope and artistry.",
+      "notes": "HBO Max — 98% RT"
+    },
+    {
+      "id": "narcos",
+      "title": "Narcos",
+      "tmdb_id": 63351,
+      "total_seasons": 3,
+      "show_status": "Ended",
+      "blurb": "Chronicles the rise of the Medellín and Cali cartels. Fast-paced and morally complex with emphasis on crime and law enforcement.",
+      "notes": "Netflix — S1: 79% RT"
+    },
+    {
+      "id": "the-spy",
+      "title": "The Spy",
+      "tmdb_id": 90228,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "blurb": "Tense espionage miniseries based on real Israeli spy Eli Cohen. Sacha Baron Cohen delivers a gripping performance.",
+      "notes": "Netflix — 6 episodes, 86% RT"
+    },
+    {
+      "id": "12-monkeys",
+      "title": "12 Monkeys",
+      "tmdb_id": 60708,
+      "total_seasons": 4,
+      "show_status": "Ended",
+      "blurb": "Time-travel thriller with complex plotting and evolving characters. Later seasons reach 90%+ RT after a slow start.",
+      "notes": "Syfy — S1: 60% RT, later seasons 90%+"
+    },
+    {
+      "id": "for-all-mankind",
+      "title": "For All Mankind",
+      "tmdb_id": 87917,
+      "total_seasons": 4,
+      "show_status": "Continuing",
+      "blurb": "Alternate-history space race exploring political intrigue and personal sacrifice. Gradually darkens across seasons.",
+      "notes": "Apple TV+ — S1: 75% RT"
+    },
+    {
+      "id": "dark-matter",
+      "title": "Dark Matter",
+      "tmdb_id": 233714,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "blurb": "High-concept sci-fi about a physicist thrust into parallel realities. Balances action with moral dilemmas.",
+      "notes": "Apple TV+ — S1: 82% RT"
+    },
+    {
+      "id": "silo",
+      "title": "Silo",
+      "tmdb_id": 125988,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "blurb": "Dystopian mystery set in a subterranean silo. Strong world-building, suspense and rebellion against an oppressive system.",
+      "notes": "Apple TV+ — S1: 88%, S2: 96% RT"
+    },
+    {
+      "id": "murderbot",
+      "title": "Murderbot",
+      "tmdb_id": 249320,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "blurb": "Follows a security robot that hacks its governor module to become autonomous while still protecting humans. Dark humor, action and anti-corporate themes.",
+      "notes": "Apple TV+ — S1: 96% RT"
+    },
+    {
+      "id": "the-diplomat",
+      "title": "The Diplomat",
+      "tmdb_id": 202948,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "blurb": "Political thriller about an ambassador juggling international crises. Fast-paced geopolitics and character-driven intrigue.",
+      "notes": "Netflix — S1: 84% RT"
     }
   ],
+  "claude_recommendations": [],
   "finished_watching": [
     {
       "id": "dark",
