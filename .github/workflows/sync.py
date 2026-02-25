@@ -2,6 +2,7 @@
 """
 Weekly sync script for SIGNAL TV Tracker.
 1. Checks TMDB for new seasons on shows in waiting_for_next_season
+   - Verifies air date is in the past before moving (avoids announced-but-unaired seasons)
 2. Moves newly available shows to available_to_watch_next
 3. Generates 3-5 Claude recommendations based on finished_watching ratings
 4. Dedups recommendations against series_to_explore
@@ -10,9 +11,9 @@ Weekly sync script for SIGNAL TV Tracker.
 import json
 import os
 import time
-import requests
 import re
-from datetime import datetime, timezone
+import requests
+from datetime import datetime, timezone, date
 
 SHOWS_FILE = os.environ.get('SHOWS_FILE', 'shows.json')
 TMDB_TOKEN = os.environ.get('TMDB_TOKEN', '')
@@ -46,13 +47,29 @@ def tmdb_get(path):
     print(f"  TMDB error {res.status_code} for {path}")
     return None
 
+def season_has_aired(tmdb_id, season_number):
+    """
+    Fetch TMDB season detail and confirm air_date is today or in the past.
+    TMDB lists announced but unaired seasons -- must verify the actual air date.
+    """
+    data = tmdb_get(f"/tv/{tmdb_id}/season/{season_number}")
+    time.sleep(0.25)
+    if not data:
+        return False
+    air_date_str = data.get('air_date') or ''
+    if not air_date_str:
+        print(f"      No air date for S{season_number} -- treating as not yet aired")
+        return False
+    try:
+        aired = datetime.strptime(air_date_str, '%Y-%m-%d').date()
+        today = datetime.now(timezone.utc).date()
+        print(f"      S{season_number} air date: {air_date_str} | Today: {today}")
+        return aired <= today
+    except Exception as e:
+        print(f"      Could not parse air date '{air_date_str}': {e}")
+        return False
+
 def check_season_updates(db):
-    """
-    For each show in waiting_for_next_season:
-    - Fetch TMDB details
-    - If total_seasons > seasons_watched, move to available_to_watch_next
-    - Update total_seasons and show_status regardless
-    """
     waiting = db.get('waiting_for_next_season', [])
     still_waiting = []
     moved_to_available = []
@@ -60,12 +77,13 @@ def check_season_updates(db):
     for show in waiting:
         tmdb_id = show.get('tmdb_id')
         if not tmdb_id:
+            print(f"  Skipping {show['title']} -- no TMDB ID")
             still_waiting.append(show)
             continue
 
         print(f"  Checking: {show['title']} (TMDB {tmdb_id})")
         data = tmdb_get(f"/tv/{tmdb_id}")
-        time.sleep(0.25)  # rate limit courtesy
+        time.sleep(0.25)
 
         if not data:
             still_waiting.append(show)
@@ -74,24 +92,30 @@ def check_season_updates(db):
         tmdb_total = data.get('number_of_seasons', show.get('total_seasons', 1))
         tmdb_status = data.get('status', show.get('show_status', 'Continuing'))
         seasons_watched = show.get('seasons_watched', 1)
+        next_season = seasons_watched + 1
 
-        # Update metadata
         show['total_seasons'] = tmdb_total
         show['show_status'] = tmdb_status
 
-        if tmdb_total > seasons_watched:
-            print(f"    → New season available! S{seasons_watched + 1} of {tmdb_total}")
-            moved_to_available.append({
-                'id': show['id'],
-                'title': show['title'],
-                'tmdb_id': tmdb_id,
-                'next_season': seasons_watched + 1,
-                'total_seasons': tmdb_total,
-                'show_status': tmdb_status,
-                'notes': show.get('notes', '')
-            })
+        if tmdb_total >= next_season:
+            print(f"    -> TMDB shows S{next_season} exists. Verifying air date...")
+            if season_has_aired(tmdb_id, next_season):
+                print(f"    -> Confirmed aired. Moving to Available Next.")
+                moved_to_available.append({
+                    'id': show['id'],
+                    'title': show['title'],
+                    'tmdb_id': tmdb_id,
+                    'next_season': next_season,
+                    'total_seasons': tmdb_total,
+                    'show_status': tmdb_status,
+                    'network': show.get('network', ''),
+                    'notes': show.get('notes', '')
+                })
+            else:
+                print(f"    -> S{next_season} not yet aired. Keeping in Waiting.")
+                still_waiting.append(show)
         else:
-            print(f"    → Still waiting. {seasons_watched}/{tmdb_total} seasons")
+            print(f"    -> No new season yet. Watched {seasons_watched}/{tmdb_total}")
             still_waiting.append(show)
 
     db['waiting_for_next_season'] = still_waiting
@@ -113,7 +137,7 @@ STRONGLY PREFERS:
 - Tight narrative arcs, season-long momentum, minimal filler
 - Controlled cast size, thematic coherence
 - Dark tone, morally complex characters, serious intelligent writing
-- Every episode advances main arc — subplots feed the central narrative
+- Every episode advances main arc -- subplots feed the central narrative
 - Genres: sci-fi dystopia, tech paranoia, espionage, political power struggles, survival thrillers
 
 RATED EXCELLENT (ideal benchmark):
@@ -137,28 +161,22 @@ HARD AVOIDS:
 - Lore-heavy franchises / expanding universes
 """
 
-def build_exclusion_ids(db):
-    """All show IDs already in the tracker — exclude from recommendations."""
-    ids = set()
-    for list_name in ['watching_now', 'available_to_watch_next', 'waiting_for_next_season',
-                      'series_to_explore', 'claude_recommendations', 'finished_watching']:
-        for show in db.get(list_name, []):
-            ids.add(show.get('id', ''))
-            ids.add(show.get('title', '').lower())
-    return ids
-
 def generate_recommendations(db):
     if not ANTHROPIC_KEY:
         print("  SKIP (no Anthropic key)")
         return
 
-    exclusions = build_exclusion_ids(db)
     series_to_explore_titles = [s['title'] for s in db.get('series_to_explore', [])]
-
     finished = db.get('finished_watching', [])
     excellent = [s['title'] for s in finished if s.get('rating') == 'Excellent']
     good = [s['title'] for s in finished if s.get('rating') == 'Good']
     abandoned = [s['title'] for s in finished if s.get('rating') == 'Abandoned Halfway']
+
+    all_titles = set()
+    for list_name in ['watching_now', 'available_to_watch_next', 'waiting_for_next_season',
+                      'series_to_explore', 'claude_recommendations', 'finished_watching']:
+        for show in db.get(list_name, []):
+            all_titles.add(show.get('title', '').lower())
 
     prompt = f"""{TASTE_PROFILE}
 
@@ -166,14 +184,15 @@ CURRENT DATA:
 Excellent: {', '.join(excellent) or 'none'}
 Good: {', '.join(good) or 'none'}
 Abandoned: {', '.join(abandoned) or 'none'}
-Already in Series to Explore (DO NOT recommend these): {', '.join(series_to_explore_titles) or 'none'}
+Already tracked (DO NOT recommend any of these): {', '.join(sorted(all_titles)) or 'none'}
 
 Generate exactly 3-5 TV series recommendations that are NOT any of the above shows.
 For each, provide:
 - title (exact official title)
-- tmdb_id (numeric TMDB ID — be accurate)
+- tmdb_id (numeric TMDB ID -- be accurate)
 - total_seasons (integer, current count)
 - show_status ("Ended" or "Continuing")
+- network (streaming service, e.g. "Apple TV+", "HBO", "Netflix", "Prime Video", "Disney+", "Hulu")
 - reason (2 sentences max: why it fits Paulo's taste profile specifically)
 
 Return ONLY valid JSON array, no markdown, no explanation:
@@ -183,6 +202,7 @@ Return ONLY valid JSON array, no markdown, no explanation:
     "tmdb_id": 12345,
     "total_seasons": 3,
     "show_status": "Ended",
+    "network": "Netflix",
     "reason": "..."
   }}
 ]"""
@@ -198,7 +218,6 @@ Return ONLY valid JSON array, no markdown, no explanation:
             messages=[{"role": "user", "content": prompt}]
         )
         raw = message.content[0].text.strip()
-        # Strip any accidental markdown fences
         raw = re.sub(r'^```json\s*', '', raw)
         raw = re.sub(r'```$', '', raw)
         recommendations = json.loads(raw)
@@ -206,22 +225,14 @@ Return ONLY valid JSON array, no markdown, no explanation:
         print(f"  Claude error: {e}")
         return
 
-    # Validate, dedup, and assign IDs
     clean = []
-    seen_titles = set(t.lower() for t in series_to_explore_titles)
-    seen_titles.update(s.get('title', '').lower() for list_name in
-                       ['watching_now','available_to_watch_next','waiting_for_next_season','finished_watching']
-                       for s in db.get(list_name, []))
+    seen = set(all_titles)
 
     for r in recommendations:
         title = r.get('title', '').strip()
-        if not title:
-            continue
-        if title.lower() in seen_titles:
+        if not title or title.lower() in seen:
             print(f"  Dedup skip: {title}")
             continue
-        show_id = title.lower().replace(r"[^a-z0-9]+", '-').strip('-')
-        # Simple slug
         show_id = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
         clean.append({
             'id': show_id,
@@ -229,25 +240,25 @@ Return ONLY valid JSON array, no markdown, no explanation:
             'tmdb_id': r.get('tmdb_id'),
             'total_seasons': r.get('total_seasons'),
             'show_status': r.get('show_status', 'Ended'),
+            'network': r.get('network', ''),
             'reason': r.get('reason', '')
         })
-        seen_titles.add(title.lower())
+        seen.add(title.lower())
 
     db['claude_recommendations'] = clean[:5]
     print(f"  Generated {len(clean)} recommendations")
     for r in clean:
-        print(f"    · {r['title']}: {r['reason'][:80]}...")
+        print(f"    . {r['title']} ({r.get('network','')}): {r['reason'][:80]}...")
 
 # ── MAIN ───────────────────────────────────────────────────────────────────
 
 def main():
     print(f"=== SIGNAL Weekly Sync ({datetime.now().isoformat()}) ===")
-
     db = load_db()
 
     print("\n[1] Checking season updates for Waiting shows...")
     moved = check_season_updates(db)
-    print(f"  → {moved} shows moved to Available Next")
+    print(f"  -> {moved} shows moved to Available Next")
 
     print("\n[2] Generating Claude recommendations...")
     generate_recommendations(db)
