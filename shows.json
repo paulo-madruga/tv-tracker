@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-25T04:06:48.514Z",
+  "last_updated": "2026-02-24T00:00:00Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -8,7 +8,8 @@
       "current_season": 3,
       "total_seasons": 3,
       "show_status": "Continuing",
-      "notes": ""
+      "notes": "",
+      "network": "Apple TV+"
     },
     {
       "id": "mindhunter",
@@ -17,7 +18,8 @@
       "current_season": 2,
       "total_seasons": 2,
       "show_status": "Ended",
-      "notes": "Final season"
+      "notes": "Final season",
+      "network": "Netflix"
     }
   ],
   "available_to_watch_next": [
@@ -28,7 +30,8 @@
       "next_season": 3,
       "total_seasons": 3,
       "show_status": "Continuing",
-      "notes": ""
+      "notes": "",
+      "network": "Apple TV+"
     },
     {
       "id": "andor",
@@ -37,7 +40,8 @@
       "next_season": 2,
       "total_seasons": 2,
       "show_status": "Ended",
-      "notes": "Watch Rogue One afterwards"
+      "notes": "Watch Rogue One afterwards",
+      "network": "Disney+"
     },
     {
       "id": "dune-prophecy",
@@ -46,7 +50,8 @@
       "next_season": 1,
       "total_seasons": 1,
       "show_status": "Continuing",
-      "notes": ""
+      "notes": "",
+      "network": "HBO Max"
     },
     {
       "id": "a-knight-of-the-seven-kingdoms",
@@ -55,34 +60,8 @@
       "next_season": 1,
       "total_seasons": 1,
       "show_status": "Continuing",
-      "notes": ""
-    },
-    {
-      "id": "house-of-the-dragon",
-      "title": "House of the Dragon",
-      "tmdb_id": 94997,
-      "next_season": 3,
-      "total_seasons": 3,
-      "show_status": "Returning Series",
-      "notes": "HBO"
-    },
-    {
-      "id": "alien-earth",
-      "title": "Alien: Earth",
-      "tmdb_id": 202555,
-      "next_season": 2,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
-      "notes": "Hulu"
-    },
-    {
-      "id": "rings-of-power",
-      "title": "Lord of the Rings: The Rings of Power",
-      "tmdb_id": 84773,
-      "next_season": 3,
-      "total_seasons": 3,
-      "show_status": "Returning Series",
-      "notes": ""
+      "notes": "",
+      "network": "HBO Max"
     }
   ],
   "waiting_for_next_season": [
@@ -92,19 +71,32 @@
       "tmdb_id": 114479,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Canceled",
-      "notes": "Unconfirmed Ã¢ÂÂ Disney+",
-      "expected_date": null
+      "show_status": "Continuing",
+      "notes": "Unconfirmed — Disney+",
+      "expected_date": null,
+      "network": "Disney+"
     },
     {
       "id": "formula-1-drive-to-survive",
       "title": "Formula 1: Drive to Survive",
       "tmdb_id": 81086,
       "seasons_watched": 7,
-      "total_seasons": 2,
-      "show_status": "Ended",
+      "total_seasons": 7,
+      "show_status": "Continuing",
       "notes": "Netflix",
-      "expected_date": "March 2026"
+      "expected_date": "March 2026",
+      "network": "Netflix"
+    },
+    {
+      "id": "house-of-the-dragon",
+      "title": "House of the Dragon",
+      "tmdb_id": 94997,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "HBO",
+      "expected_date": null,
+      "network": "HBO Max"
     },
     {
       "id": "ahsoka",
@@ -112,9 +104,10 @@
       "tmdb_id": 114461,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Returning Series",
+      "show_status": "Continuing",
       "notes": "Disney+",
-      "expected_date": "2026"
+      "expected_date": "2026",
+      "network": "Disney+"
     },
     {
       "id": "the-last-of-us",
@@ -122,9 +115,10 @@
       "tmdb_id": 100088,
       "seasons_watched": 2,
       "total_seasons": 2,
-      "show_status": "Returning Series",
+      "show_status": "Continuing",
       "notes": "HBO",
-      "expected_date": "2027"
+      "expected_date": "2027",
+      "network": "HBO Max"
     },
     {
       "id": "reacher",
@@ -132,19 +126,43 @@
       "tmdb_id": 108978,
       "seasons_watched": 3,
       "total_seasons": 3,
-      "show_status": "Returning Series",
-      "notes": "Prime Video Ã¢ÂÂ pre-production underway",
-      "expected_date": "2026"
+      "show_status": "Continuing",
+      "notes": "Prime Video — pre-production underway",
+      "expected_date": "2026",
+      "network": "Prime Video"
     },
     {
       "id": "quarterback",
       "title": "Quarterback",
       "tmdb_id": 228891,
       "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "Netflix — S3 not yet announced",
+      "expected_date": null,
+      "network": "Netflix"
+    },
+    {
+      "id": "alien-earth",
+      "title": "Alien: Earth",
+      "tmdb_id": 202555,
+      "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Returning Series",
-      "notes": "Netflix Ã¢ÂÂ S3 not yet announced",
-      "expected_date": null
+      "show_status": "Continuing",
+      "notes": "Hulu",
+      "expected_date": null,
+      "network": "Hulu"
+    },
+    {
+      "id": "rings-of-power",
+      "title": "Lord of the Rings: The Rings of Power",
+      "tmdb_id": 84773,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null,
+      "network": "Prime Video"
     },
     {
       "id": "pluribus",
@@ -154,29 +172,22 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "notes": "",
-      "expected_date": null
+      "expected_date": null,
+      "network": ""
     },
     {
       "id": "fallout",
       "title": "Fallout",
       "tmdb_id": 106379,
-      "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
       "notes": "",
-      "expected_date": null
+      "expected_date": null,
+      "network": "Prime Video"
     }
   ],
   "series_to_explore": [
-    {
-      "id": "slow-horses",
-      "title": "Slow Horses",
-      "tmdb_id": 95480,
-      "total_seasons": 5,
-      "show_status": "Continuing",
-      "blurb": "Disgraced MI5 agents and their obnoxious boss navigate the espionage world to defend England from sinister forces. Tight seasonal arcs, Gary Oldman, 95-100% RT across all seasons.",
-      "notes": "Apple TV+"
-    },
     {
       "id": "severance",
       "title": "Severance",
@@ -184,7 +195,8 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "blurb": "A darkly satirical sci-fi thriller where employees 'sever' their memories between work and home, exploring corporate control and autonomy with tension and strong arcs.",
-      "notes": "Apple TV+"
+      "notes": "Apple TV+",
+      "network": "Apple TV+"
     },
     {
       "id": "the-leftovers",
@@ -193,7 +205,8 @@
       "total_seasons": 3,
       "show_status": "Ended",
       "blurb": "Explores grief and faith after a sudden global disappearance. Emotionally intense with complex characters.",
-      "notes": "HBO Ã¢ÂÂ S1: 82% RT"
+      "notes": "HBO — S1: 82% RT",
+      "network": "HBO Max"
     },
     {
       "id": "the-terror",
@@ -202,7 +215,8 @@
       "total_seasons": 2,
       "show_status": "Ended",
       "blurb": "Horror blending historical expeditions with supernatural dread. S1 survival story echoes dystopian and morally fraught narratives.",
-      "notes": "AMC Ã¢ÂÂ S1: 94% RT, S2: 80% RT"
+      "notes": "AMC — S1: 94% RT, S2: 80% RT",
+      "network": "AMC+"
     },
     {
       "id": "fargo",
@@ -211,7 +225,8 @@
       "total_seasons": 5,
       "show_status": "Continuing",
       "blurb": "Anthological crime drama blending dark humor with moral dilemmas. Each season is a fresh self-contained story.",
-      "notes": "FX/Hulu Ã¢ÂÂ S1: 97% RT. Note: anthology format per season."
+      "notes": "FX/Hulu — S1: 97% RT. Note: anthology format per season.",
+      "network": "Hulu"
     },
     {
       "id": "station-eleven",
@@ -220,7 +235,8 @@
       "total_seasons": 1,
       "show_status": "Ended",
       "blurb": "Post-apocalyptic drama linking survivors after a flu pandemic. Combines survival themes with hope and artistry.",
-      "notes": "HBO Max Ã¢ÂÂ 98% RT"
+      "notes": "HBO Max — 98% RT",
+      "network": "HBO Max"
     },
     {
       "id": "narcos",
@@ -228,8 +244,9 @@
       "tmdb_id": 63351,
       "total_seasons": 3,
       "show_status": "Ended",
-      "blurb": "Chronicles the rise of the MedellÃÂ­n and Cali cartels. Fast-paced and morally complex with emphasis on crime and law enforcement.",
-      "notes": "Netflix Ã¢ÂÂ S1: 79% RT"
+      "blurb": "Chronicles the rise of the Medellín and Cali cartels. Fast-paced and morally complex with emphasis on crime and law enforcement.",
+      "notes": "Netflix — S1: 79% RT",
+      "network": "Netflix"
     },
     {
       "id": "the-spy",
@@ -238,7 +255,8 @@
       "total_seasons": 1,
       "show_status": "Ended",
       "blurb": "Tense espionage miniseries based on real Israeli spy Eli Cohen. Sacha Baron Cohen delivers a gripping performance.",
-      "notes": "Netflix Ã¢ÂÂ 6 episodes, 86% RT"
+      "notes": "Netflix — 6 episodes, 86% RT",
+      "network": "Netflix"
     },
     {
       "id": "12-monkeys",
@@ -247,7 +265,8 @@
       "total_seasons": 4,
       "show_status": "Ended",
       "blurb": "Time-travel thriller with complex plotting and evolving characters. Later seasons reach 90%+ RT after a slow start.",
-      "notes": "Syfy Ã¢ÂÂ S1: 60% RT, later seasons 90%+"
+      "notes": "Syfy — S1: 60% RT, later seasons 90%+",
+      "network": "Peacock"
     },
     {
       "id": "for-all-mankind",
@@ -256,7 +275,8 @@
       "total_seasons": 4,
       "show_status": "Continuing",
       "blurb": "Alternate-history space race exploring political intrigue and personal sacrifice. Gradually darkens across seasons.",
-      "notes": "Apple TV+ Ã¢ÂÂ S1: 75% RT"
+      "notes": "Apple TV+ — S1: 75% RT",
+      "network": "Apple TV+"
     },
     {
       "id": "dark-matter",
@@ -265,7 +285,8 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "blurb": "High-concept sci-fi about a physicist thrust into parallel realities. Balances action with moral dilemmas.",
-      "notes": "Apple TV+ Ã¢ÂÂ S1: 82% RT"
+      "notes": "Apple TV+ — S1: 82% RT",
+      "network": "Apple TV+"
     },
     {
       "id": "silo",
@@ -274,7 +295,8 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "blurb": "Dystopian mystery set in a subterranean silo. Strong world-building, suspense and rebellion against an oppressive system.",
-      "notes": "Apple TV+ Ã¢ÂÂ S1: 88%, S2: 96% RT"
+      "notes": "Apple TV+ — S1: 88%, S2: 96% RT",
+      "network": "Apple TV+"
     },
     {
       "id": "murderbot",
@@ -283,7 +305,8 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "blurb": "Follows a security robot that hacks its governor module to become autonomous while still protecting humans. Dark humor, action and anti-corporate themes.",
-      "notes": "Apple TV+ Ã¢ÂÂ S1: 96% RT"
+      "notes": "Apple TV+ — S1: 96% RT",
+      "network": "Apple TV+"
     },
     {
       "id": "the-diplomat",
@@ -292,44 +315,11 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "blurb": "Political thriller about an ambassador juggling international crises. Fast-paced geopolitics and character-driven intrigue.",
-      "notes": "Netflix Ã¢ÂÂ S1: 84% RT"
-    },
-    {
-      "id": "counterpart",
-      "title": "Counterpart",
-      "tmdb_id": 63646,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "blurb": "Howard Silk is a lowly cog in a bureaucratic UN agency who is turning the last corner of a life filled with regret when he discovers the agency he works for is guarding a secret: a crossing to a parallel dimension.",
-      "notes": "Sci-fi espionage: a bureaucrat discovers a parallel-world spy agency and meets his ruthless counterpart. Deeply complex and morally ambiguous, ideal for fans of 1984 and Red Rising."
+      "notes": "Netflix — S1: 84% RT",
+      "network": "Netflix"
     }
   ],
-  "claude_recommendations": [
-    {
-      "id": "the-americans",
-      "title": "The Americans",
-      "tmdb_id": 2406,
-      "total_seasons": 6,
-      "show_status": "Ended",
-      "reason": "Cold War espionage thriller with morally complex Soviet deep-cover agents, featuring tight narrative control and every episode advancing the central arc. Dark tone with controlled cast exploring themes of identity, loyalty, and survival under constant threat of exposure."
-    },
-    {
-      "id": "black-mirror",
-      "title": "Black Mirror",
-      "tmdb_id": 42009,
-      "total_seasons": 6,
-      "show_status": "Continuing",
-      "reason": "Tech paranoia dystopian series with dark moral complexity and intelligent writing exploring technology's impact on humanity. Each standalone episode delivers complete narrative arcs with clear payoffs, avoiding sprawl while maintaining thematic coherence."
-    },
-    {
-      "id": "mare-of-easttown",
-      "title": "Mare of Easttown",
-      "tmdb_id": 85552,
-      "total_seasons": 1,
-      "show_status": "Ended",
-      "reason": "Tightly constructed murder mystery with dark tone and morally complex characters in a controlled small-town setting. Every episode advances the central investigation with clear narrative momentum and intelligent writing that delivers satisfying resolution."
-    }
-  ],
+  "claude_recommendations": [],
   "finished_watching": [
     {
       "id": "dark",
@@ -526,7 +516,7 @@
       "seasons_watched": 2,
       "total_seasons": 5,
       "status": "Ended",
-      "notes": "Loved S1. Dropped mid-S2 onward Ã¢ÂÂ too many characters, plot sprawl",
+      "notes": "Loved S1. Dropped mid-S2 onward — too many characters, plot sprawl",
       "date_finished": null
     },
     {
