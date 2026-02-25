@@ -1310,12 +1310,19 @@ async function runTmdbSearch(query) {
   if (!results.length) {
     container.innerHTML = '<div class="tmdb-result-item" style="color:var(--text3);">No results</div>';
   } else {
-    container.innerHTML = results.map(r => `
-      <div class="tmdb-result-item" onclick="selectTmdbShow(${r.id}, '${esc(r.name)}', ${r.number_of_seasons || 0}, '${r.status || ''}', '${esc(r.overview || '')}')">
+    container.innerHTML = results.map((r, i) => `
+      <div class="tmdb-result-item" data-idx="${i}">
         <div class="tmdb-result-title">${esc(r.name)}</div>
         <div class="tmdb-result-meta">${r.first_air_date ? r.first_air_date.slice(0,4) : '?'} · ${r.number_of_seasons || '?'} seasons</div>
       </div>
     `).join('');
+    // Attach click handlers via JS to avoid inline string escaping issues
+    container.querySelectorAll('.tmdb-result-item[data-idx]').forEach(el => {
+      const r = results[parseInt(el.dataset.idx)];
+      el.addEventListener('click', () => selectTmdbShow(
+        r.id, r.name, r.number_of_seasons || 0, r.status || '', r.overview || ''
+      ));
+    });
   }
   container.classList.remove('hidden');
 }
