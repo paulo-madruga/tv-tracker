@@ -21,7 +21,9 @@
       "notes": "Final season",
       "network": "Netflix"
     },
-    {
+  ],
+  "available_to_watch_next": [
+     {
       "id": "a-knight-of-the-seven-kingdoms",
       "title": "A Knight of the Seven Kingdoms",
       "tmdb_id": 209867,
@@ -29,9 +31,7 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "notes": ""
-    }
-  ],
-  "available_to_watch_next": [
+    },
     {
       "id": "foundation",
       "title": "Foundation",
