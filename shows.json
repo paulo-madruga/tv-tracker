@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-26T03:38:16.354Z",
+  "last_updated": "2026-02-26T03:38:32.694Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -20,16 +20,6 @@
       "show_status": "Ended",
       "notes": "Final season",
       "network": "Netflix"
-    },
-    {
-      "id": "the-old-man",
-      "title": "The Old Man",
-      "tmdb_id": 111800,
-      "current_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "network": "",
-      "notes": ""
     }
   ],
   "available_to_watch_next": [
@@ -195,6 +185,16 @@
       "notes": "",
       "expected_date": null,
       "network": "Prime Video"
+    },
+    {
+      "id": "the-old-man",
+      "title": "The Old Man",
+      "tmdb_id": 111800,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
     }
   ],
   "series_to_explore": [
