@@ -1002,6 +1002,7 @@ function cardWatchingNow(s) {
     </div>
     <div class="card-actions">
       <button class="btn btn-ghost btn-sm" onclick="openFinishModal('${s.id}')">FINISH SEASON</button>
+      <button class="btn btn-ghost btn-sm" onclick="moveBackToAvailable('${s.id}')">NOT STARTED</button>
       <button class="btn btn-danger btn-sm" onclick="abandonShow('${s.id}')">ABANDON</button>
     </div>
   </div>`;
@@ -1186,6 +1187,27 @@ async function removeFromExplore(id) {
   DB.series_to_explore = DB.series_to_explore.filter(s => s.id !== id);
   render();
   await pushToGithub();
+}
+
+// Move back to Available Next
+async function moveBackToAvailable(id) {
+  const show = DB.watching_now.find(s => s.id === id);
+  if (!show) return;
+  DB.watching_now = DB.watching_now.filter(s => s.id !== id);
+  DB.available_to_watch_next = DB.available_to_watch_next.filter(s => s.id !== id);
+  DB.available_to_watch_next.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    next_season: show.current_season,
+    total_seasons: show.total_seasons,
+    show_status: show.show_status,
+    network: show.network || '',
+    notes: show.notes || ''
+  });
+  render();
+  await pushToGithub();
+  toast('Moved back to Available Next.', 'ok');
 }
 
 // Abandon
