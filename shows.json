@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-26T03:42:40.154731+00:00",
+  "last_updated": "2026-02-26T03:42:12.925Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -21,9 +21,7 @@
       "notes": "Final season",
       "network": "Netflix"
     },
-  ],
-  "available_to_watch_next": [
-     {
+    {
       "id": "a-knight-of-the-seven-kingdoms",
       "title": "A Knight of the Seven Kingdoms",
       "tmdb_id": 209867,
@@ -31,7 +29,9 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "notes": ""
-    },
+    }
+  ],
+  "available_to_watch_next": [
     {
       "id": "foundation",
       "title": "Foundation",
@@ -329,31 +329,40 @@
   ],
   "claude_recommendations": [
     {
-      "id": "the-night-agent",
-      "title": "The Night Agent",
-      "tmdb_id": 202250,
+      "id": "mare-of-easttown",
+      "title": "Mare of Easttown",
+      "tmdb_id": 123168,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "network": "HBO",
+      "reason": "Tight character-driven crime thriller with morally complex protagonist and controlled narrative arc. Every episode advances the central mystery while exploring themes of guilt, community secrets, and personal redemption."
+    },
+    {
+      "id": "the-night-manager",
+      "title": "The Night Manager",
+      "tmdb_id": 65334,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "network": "BBC One",
+      "reason": "Espionage thriller with focused cat-and-mouse dynamic between intelligence operative and arms dealer. Maintains tight narrative control with sophisticated writing and morally ambiguous characters throughout."
+    },
+    {
+      "id": "yellowjackets",
+      "title": "Yellowjackets",
+      "tmdb_id": 119051,
       "total_seasons": 2,
       "show_status": "Continuing",
-      "network": "Netflix",
-      "reason": "Tight conspiracy thriller with controlled cast following FBI agent uncovering deep government corruption. Every episode drives the central paranoia plot forward with minimal subplot diversion."
+      "network": "Showtime",
+      "reason": "Survival thriller with controlled dual timeline structure exploring psychological horror and moral decay. Dark tone with thematically coherent narrative examining how extreme circumstances corrupt human nature."
     },
     {
-      "id": "counterpart",
-      "title": "Counterpart",
-      "tmdb_id": 75912,
-      "total_seasons": 2,
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 1436,
+      "total_seasons": 6,
       "show_status": "Ended",
-      "network": "Starz",
-      "reason": "Cerebral sci-fi espionage series about parallel dimensions with morally complex characters and tight narrative focus. Dense plotting rewards attention while maintaining season-long momentum through interconnected spy operations."
-    },
-    {
-      "id": "utopia",
-      "title": "Utopia",
-      "tmdb_id": 46511,
-      "total_seasons": 2,
-      "show_status": "Ended",
-      "network": "Channel 4",
-      "reason": "Paranoid conspiracy thriller about dangerous graphic novel with tight narrative arc and morally ambiguous characters. Relentless pacing drives conspiracy plot forward while exploring themes of power and survival."
+      "network": "FX",
+      "reason": "Cold War espionage drama with tight character focus on deep-cover Soviet agents living as Americans. Maintains narrative momentum throughout six seasons with consistent thematic exploration of identity, loyalty, and moral compromise."
     }
   ],
   "finished_watching": [
