@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-26T03:42:02.953Z",
+  "last_updated": "2026-02-26T03:42:12.925Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -28,15 +28,6 @@
       "current_season": 1,
       "total_seasons": 1,
       "show_status": "Continuing",
-      "notes": ""
-    },
-    {
-      "id": "the-old-man",
-      "title": "The Old Man",
-      "tmdb_id": 111800,
-      "current_season": 2,
-      "total_seasons": 2,
-      "show_status": "Canceled",
       "notes": ""
     }
   ],
@@ -192,6 +183,16 @@
       "notes": "",
       "expected_date": null,
       "network": ""
+    },
+    {
+      "id": "the-old-man",
+      "title": "The Old Man",
+      "tmdb_id": 111800,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Canceled",
+      "notes": "",
+      "expected_date": null
     }
   ],
   "series_to_explore": [
