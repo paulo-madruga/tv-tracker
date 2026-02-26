@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-26T03:50:52.563Z",
+  "last_updated": "2026-02-26T03:51:56.398087+00:00",
   "watching_now": [
     {
       "id": "shrinking",
@@ -330,40 +330,22 @@
   ],
   "claude_recommendations": [
     {
-      "id": "mare-of-easttown",
-      "title": "Mare of Easttown",
-      "tmdb_id": 123168,
-      "total_seasons": 1,
-      "show_status": "Ended",
-      "network": "HBO",
-      "reason": "Tight character-driven crime thriller with morally complex protagonist and controlled narrative arc. Every episode advances the central mystery while exploring themes of guilt, community secrets, and personal redemption."
-    },
-    {
-      "id": "the-night-manager",
-      "title": "The Night Manager",
-      "tmdb_id": 65334,
-      "total_seasons": 1,
-      "show_status": "Ended",
-      "network": "BBC One",
-      "reason": "Espionage thriller with focused cat-and-mouse dynamic between intelligence operative and arms dealer. Maintains tight narrative control with sophisticated writing and morally ambiguous characters throughout."
-    },
-    {
-      "id": "yellowjackets",
-      "title": "Yellowjackets",
-      "tmdb_id": 119051,
+      "id": "counterpart",
+      "title": "Counterpart",
+      "tmdb_id": 69788,
       "total_seasons": 2,
-      "show_status": "Continuing",
-      "network": "Showtime",
-      "reason": "Survival thriller with controlled dual timeline structure exploring psychological horror and moral decay. Dark tone with thematically coherent narrative examining how extreme circumstances corrupt human nature."
+      "show_status": "Ended",
+      "network": "Starz",
+      "reason": "Cold War espionage thriller with sci-fi elements featuring parallel dimensions and morally ambiguous characters. Tight narrative focus on identity and political intrigue with every episode advancing the central conspiracy plot."
     },
     {
-      "id": "the-americans",
-      "title": "The Americans",
-      "tmdb_id": 1436,
-      "total_seasons": 6,
+      "id": "the-handmaid-s-tale",
+      "title": "The Handmaid's Tale",
+      "tmdb_id": 69478,
+      "total_seasons": 5,
       "show_status": "Ended",
-      "network": "FX",
-      "reason": "Cold War espionage drama with tight character focus on deep-cover Soviet agents living as Americans. Maintains narrative momentum throughout six seasons with consistent thematic exploration of identity, loyalty, and moral compromise."
+      "network": "Hulu",
+      "reason": "Dystopian political thriller with controlled cast and dark examination of authoritarian power structures. Each season maintains narrative momentum around resistance and survival with morally complex characters navigating systematic oppression."
     }
   ],
   "finished_watching": [
