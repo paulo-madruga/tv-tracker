@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-26T03:38:32.694Z",
+  "last_updated": "2026-02-26T03:39:18.901032+00:00",
   "watching_now": [
     {
       "id": "shrinking",
@@ -62,6 +62,26 @@
       "show_status": "Continuing",
       "notes": "",
       "network": "HBO Max"
+    },
+    {
+      "id": "fallout",
+      "title": "Fallout",
+      "tmdb_id": 106379,
+      "next_season": 2,
+      "total_seasons": 2,
+      "show_status": "Returning Series",
+      "network": "Prime Video",
+      "notes": ""
+    },
+    {
+      "id": "the-old-man",
+      "title": "The Old Man",
+      "tmdb_id": 111800,
+      "next_season": 2,
+      "total_seasons": 2,
+      "show_status": "Canceled",
+      "network": "",
+      "notes": ""
     }
   ],
   "waiting_for_next_season": [
@@ -71,7 +91,7 @@
       "tmdb_id": 114479,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
+      "show_status": "Canceled",
       "notes": "Unconfirmed â Disney+",
       "expected_date": null,
       "network": "Disney+"
@@ -81,8 +101,8 @@
       "title": "Formula 1: Drive to Survive",
       "tmdb_id": 81086,
       "seasons_watched": 7,
-      "total_seasons": 7,
-      "show_status": "Continuing",
+      "total_seasons": 2,
+      "show_status": "Ended",
       "notes": "Netflix",
       "expected_date": "March 2026",
       "network": "Netflix"
@@ -92,8 +112,8 @@
       "title": "House of the Dragon",
       "tmdb_id": 94997,
       "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
+      "total_seasons": 3,
+      "show_status": "Returning Series",
       "notes": "HBO",
       "expected_date": null,
       "network": "HBO Max"
@@ -104,7 +124,7 @@
       "tmdb_id": 114461,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "Disney+",
       "expected_date": "2026",
       "network": "Disney+"
@@ -115,7 +135,7 @@
       "tmdb_id": 100088,
       "seasons_watched": 2,
       "total_seasons": 2,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "HBO",
       "expected_date": "2027",
       "network": "HBO Max"
@@ -126,7 +146,7 @@
       "tmdb_id": 108978,
       "seasons_watched": 3,
       "total_seasons": 3,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "Prime Video â pre-production underway",
       "expected_date": "2026",
       "network": "Prime Video"
@@ -136,8 +156,8 @@
       "title": "Quarterback",
       "tmdb_id": 228891,
       "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
+      "total_seasons": 1,
+      "show_status": "Returning Series",
       "notes": "Netflix â S3 not yet announced",
       "expected_date": null,
       "network": "Netflix"
@@ -147,8 +167,8 @@
       "title": "Alien: Earth",
       "tmdb_id": 202555,
       "seasons_watched": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
+      "total_seasons": 2,
+      "show_status": "Returning Series",
       "notes": "Hulu",
       "expected_date": null,
       "network": "Hulu"
@@ -158,8 +178,8 @@
       "title": "Lord of the Rings: The Rings of Power",
       "tmdb_id": 84773,
       "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
+      "total_seasons": 3,
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": null,
       "network": "Prime Video"
@@ -174,27 +194,6 @@
       "notes": "",
       "expected_date": null,
       "network": ""
-    },
-    {
-      "id": "fallout",
-      "title": "Fallout",
-      "tmdb_id": 106379,
-      "seasons_watched": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": "",
-      "expected_date": null,
-      "network": "Prime Video"
-    },
-    {
-      "id": "the-old-man",
-      "title": "The Old Man",
-      "tmdb_id": 111800,
-      "seasons_watched": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": "",
-      "expected_date": null
     }
   ],
   "series_to_explore": [
@@ -329,7 +328,44 @@
       "network": "Netflix"
     }
   ],
-  "claude_recommendations": [],
+  "claude_recommendations": [
+    {
+      "id": "mare-of-easttown",
+      "title": "Mare of Easttown",
+      "tmdb_id": 123168,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "network": "HBO",
+      "reason": "Tight character-driven crime thriller with morally complex protagonist and controlled narrative arc. Every episode advances the central mystery while exploring themes of guilt, community secrets, and personal redemption."
+    },
+    {
+      "id": "the-night-manager",
+      "title": "The Night Manager",
+      "tmdb_id": 65334,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "network": "BBC One",
+      "reason": "Espionage thriller with focused cat-and-mouse dynamic between intelligence operative and arms dealer. Maintains tight narrative control with sophisticated writing and morally ambiguous characters throughout."
+    },
+    {
+      "id": "yellowjackets",
+      "title": "Yellowjackets",
+      "tmdb_id": 119051,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "network": "Showtime",
+      "reason": "Survival thriller with controlled dual timeline structure exploring psychological horror and moral decay. Dark tone with thematically coherent narrative examining how extreme circumstances corrupt human nature."
+    },
+    {
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 1436,
+      "total_seasons": 6,
+      "show_status": "Ended",
+      "network": "FX",
+      "reason": "Cold War espionage drama with tight character focus on deep-cover Soviet agents living as Americans. Maintains narrative momentum throughout six seasons with consistent thematic exploration of identity, loyalty, and moral compromise."
+    }
+  ],
   "finished_watching": [
     {
       "id": "dark",
