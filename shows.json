@@ -54,35 +54,36 @@
       "network": "HBO Max"
     },
     {
-      "id": "fallout",
-      "title": "Fallout",
-      "tmdb_id": 106379,
-      "next_season": 2,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
-      "network": "Prime Video",
-      "notes": ""
-    },
-    {
       "id": "a-knight-of-the-seven-kingdoms",
       "title": "A Knight of the Seven Kingdoms",
       "tmdb_id": 209867,
       "next_season": 1,
       "total_seasons": 1,
       "show_status": "Continuing",
-      "network": "",
-      "notes": ""
+      "notes": "",
+      "network": "HBO Max"
     }
   ],
   "waiting_for_next_season": [
+    {
+      "id": "fallout",
+      "title": "Fallout",
+      "tmdb_id": 106379,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null,
+      "network": "Prime Video"
+    },
     {
       "id": "skeleton-crew",
       "title": "Star Wars: Skeleton Crew",
       "tmdb_id": 114479,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Canceled",
-      "notes": "Unconfirmed ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Disney+",
+      "show_status": "Continuing",
+      "notes": "Status unconfirmed",
       "expected_date": null,
       "network": "Disney+"
     },
@@ -91,9 +92,9 @@
       "title": "Formula 1: Drive to Survive",
       "tmdb_id": 81086,
       "seasons_watched": 7,
-      "total_seasons": 2,
-      "show_status": "Ended",
-      "notes": "Netflix",
+      "total_seasons": 7,
+      "show_status": "Continuing",
+      "notes": "",
       "expected_date": "March 2026",
       "network": "Netflix"
     },
@@ -103,9 +104,9 @@
       "tmdb_id": 94997,
       "seasons_watched": 2,
       "total_seasons": 3,
-      "show_status": "Returning Series",
-      "notes": "HBO",
-      "expected_date": null,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": "June 2026",
       "network": "HBO Max"
     },
     {
@@ -114,8 +115,8 @@
       "tmdb_id": 114461,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Returning Series",
-      "notes": "Disney+",
+      "show_status": "Continuing",
+      "notes": "",
       "expected_date": "2026",
       "network": "Disney+"
     },
@@ -125,8 +126,8 @@
       "tmdb_id": 100088,
       "seasons_watched": 2,
       "total_seasons": 2,
-      "show_status": "Returning Series",
-      "notes": "HBO",
+      "show_status": "Continuing",
+      "notes": "",
       "expected_date": "2027",
       "network": "HBO Max"
     },
@@ -136,8 +137,8 @@
       "tmdb_id": 108978,
       "seasons_watched": 3,
       "total_seasons": 3,
-      "show_status": "Returning Series",
-      "notes": "Prime Video ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ pre-production underway",
+      "show_status": "Continuing",
+      "notes": "Pre-production underway",
       "expected_date": "2026",
       "network": "Prime Video"
     },
@@ -146,9 +147,9 @@
       "title": "Quarterback",
       "tmdb_id": 228891,
       "seasons_watched": 2,
-      "total_seasons": 1,
-      "show_status": "Returning Series",
-      "notes": "Netflix ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S3 not yet announced",
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "S3 not yet announced",
       "expected_date": null,
       "network": "Netflix"
     },
@@ -157,9 +158,9 @@
       "title": "Alien: Earth",
       "tmdb_id": 202555,
       "seasons_watched": 1,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
-      "notes": "Hulu",
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "",
       "expected_date": null,
       "network": "Hulu"
     },
@@ -169,7 +170,7 @@
       "tmdb_id": 84773,
       "seasons_watched": 2,
       "total_seasons": 3,
-      "show_status": "Returning Series",
+      "show_status": "Continuing",
       "notes": "",
       "expected_date": null,
       "network": "Prime Video"
@@ -184,27 +185,27 @@
       "notes": "",
       "expected_date": null,
       "network": ""
-    },
-    {
-      "id": "the-old-man",
-      "title": "The Old Man",
-      "tmdb_id": 111800,
-      "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Canceled",
-      "notes": "",
-      "expected_date": null
     }
   ],
   "series_to_explore": [
+    {
+      "id": "slow-horses",
+      "title": "Slow Horses",
+      "tmdb_id": 95480,
+      "total_seasons": 5,
+      "show_status": "Continuing",
+      "blurb": "Disgraced MI5 agents and their notorious boss navigate the espionage world to defend England from sinister forces. Tight seasonal arcs, Gary Oldman, 95-100% RT across all seasons.",
+      "notes": "",
+      "network": "Apple TV+"
+    },
     {
       "id": "severance",
       "title": "Severance",
       "tmdb_id": 95396,
       "total_seasons": 2,
       "show_status": "Continuing",
-      "blurb": "A darkly satirical sci-fi thriller where employees 'sever' their memories between work and home, exploring corporate control and autonomy with tension and strong arcs.",
-      "notes": "Apple TV+",
+      "blurb": "A darkly satirical sci-fi thriller where employees sever their memories between work and home, exploring corporate control and autonomy with tension and strong arcs.",
+      "notes": "",
       "network": "Apple TV+"
     },
     {
@@ -214,7 +215,7 @@
       "total_seasons": 3,
       "show_status": "Ended",
       "blurb": "Explores grief and faith after a sudden global disappearance. Emotionally intense with complex characters.",
-      "notes": "HBO ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 82% RT",
+      "notes": "S1: 82% RT",
       "network": "HBO Max"
     },
     {
@@ -224,7 +225,7 @@
       "total_seasons": 2,
       "show_status": "Ended",
       "blurb": "Horror blending historical expeditions with supernatural dread. S1 survival story echoes dystopian and morally fraught narratives.",
-      "notes": "AMC ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 94% RT, S2: 80% RT",
+      "notes": "S1: 94% RT, S2: 80% RT",
       "network": "AMC+"
     },
     {
@@ -234,7 +235,7 @@
       "total_seasons": 5,
       "show_status": "Continuing",
       "blurb": "Anthological crime drama blending dark humor with moral dilemmas. Each season is a fresh self-contained story.",
-      "notes": "FX/Hulu ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 97% RT. Note: anthology format per season.",
+      "notes": "S1: 97% RT. Note: anthology format per season.",
       "network": "Hulu"
     },
     {
@@ -244,7 +245,7 @@
       "total_seasons": 1,
       "show_status": "Ended",
       "blurb": "Post-apocalyptic drama linking survivors after a flu pandemic. Combines survival themes with hope and artistry.",
-      "notes": "HBO Max ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ 98% RT",
+      "notes": "98% RT",
       "network": "HBO Max"
     },
     {
@@ -253,8 +254,8 @@
       "tmdb_id": 63351,
       "total_seasons": 3,
       "show_status": "Ended",
-      "blurb": "Chronicles the rise of the MedellÃÂÃÂÃÂÃÂ­n and Cali cartels. Fast-paced and morally complex with emphasis on crime and law enforcement.",
-      "notes": "Netflix ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 79% RT",
+      "blurb": "Chronicles the rise of the Medellin and Cali cartels. Fast-paced and morally complex with emphasis on crime and law enforcement.",
+      "notes": "S1: 79% RT",
       "network": "Netflix"
     },
     {
@@ -264,7 +265,7 @@
       "total_seasons": 1,
       "show_status": "Ended",
       "blurb": "Tense espionage miniseries based on real Israeli spy Eli Cohen. Sacha Baron Cohen delivers a gripping performance.",
-      "notes": "Netflix ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ 6 episodes, 86% RT",
+      "notes": "6 episodes, 86% RT",
       "network": "Netflix"
     },
     {
@@ -274,7 +275,7 @@
       "total_seasons": 4,
       "show_status": "Ended",
       "blurb": "Time-travel thriller with complex plotting and evolving characters. Later seasons reach 90%+ RT after a slow start.",
-      "notes": "Syfy ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 60% RT, later seasons 90%+",
+      "notes": "S1: 60% RT, later seasons 90%+",
       "network": "Peacock"
     },
     {
@@ -284,7 +285,7 @@
       "total_seasons": 4,
       "show_status": "Continuing",
       "blurb": "Alternate-history space race exploring political intrigue and personal sacrifice. Gradually darkens across seasons.",
-      "notes": "Apple TV+ ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 75% RT",
+      "notes": "S1: 75% RT",
       "network": "Apple TV+"
     },
     {
@@ -294,7 +295,7 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "blurb": "High-concept sci-fi about a physicist thrust into parallel realities. Balances action with moral dilemmas.",
-      "notes": "Apple TV+ ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 82% RT",
+      "notes": "S1: 82% RT",
       "network": "Apple TV+"
     },
     {
@@ -304,7 +305,7 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "blurb": "Dystopian mystery set in a subterranean silo. Strong world-building, suspense and rebellion against an oppressive system.",
-      "notes": "Apple TV+ ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 88%, S2: 96% RT",
+      "notes": "S1: 88%, S2: 96% RT",
       "network": "Apple TV+"
     },
     {
@@ -314,7 +315,7 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "blurb": "Follows a security robot that hacks its governor module to become autonomous while still protecting humans. Dark humor, action and anti-corporate themes.",
-      "notes": "Apple TV+ ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 96% RT",
+      "notes": "S1: 96% RT",
       "network": "Apple TV+"
     },
     {
@@ -324,7 +325,7 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "blurb": "Political thriller about an ambassador juggling international crises. Fast-paced geopolitics and character-driven intrigue.",
-      "notes": "Netflix ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ S1: 84% RT",
+      "notes": "S1: 84% RT",
       "network": "Netflix"
     }
   ],
@@ -367,6 +368,18 @@
     }
   ],
   "finished_watching": [
+    {
+      "id": "the-old-man",
+      "title": "The Old Man",
+      "tmdb_id": 111800,
+      "rating": "Excellent",
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": "2026-03-02",
+      "network": "FX"
+    },
     {
       "id": "dark",
       "title": "Dark",
@@ -562,7 +575,7 @@
       "seasons_watched": 2,
       "total_seasons": 5,
       "status": "Ended",
-      "notes": "Loved S1. Dropped mid-S2 onward ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ too many characters, plot sprawl",
+      "notes": "Loved S1. Dropped mid-S2 onward - too many characters, plot sprawl",
       "date_finished": null
     },
     {
