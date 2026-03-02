@@ -1541,14 +1541,7 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
 });
 </script>
 
-<!-- Service worker disabled -->
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(regs => {
-    regs.forEach(reg => reg.unregister());
-  });
-}
-</script>
+
 
 </body>
 </html>
