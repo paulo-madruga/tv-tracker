@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-27T20:08:14.538Z",
+  "last_updated": "2026-03-02T11:10:54.647086+00:00",
   "watching_now": [
     {
       "id": "shrinking",
@@ -330,13 +330,40 @@
   ],
   "claude_recommendations": [
     {
-      "id": "counterpart",
-      "title": "Counterpart",
-      "tmdb_id": 69788,
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 2406,
+      "total_seasons": 6,
+      "show_status": "Ended",
+      "network": "FX",
+      "reason": "Espionage thriller with tight narrative focus on Soviet deep-cover agents, featuring morally complex characters and escalating tension. Every episode serves the central arc of family vs. duty with no filler content."
+    },
+    {
+      "id": "utopia",
+      "title": "Utopia",
+      "tmdb_id": 52814,
       "total_seasons": 2,
       "show_status": "Ended",
-      "network": "Starz",
-      "reason": "Cold War espionage thriller with sci-fi elements featuring parallel dimensions and morally ambiguous characters. Tight narrative focus on identity and political intrigue with every episode advancing the central conspiracy plot."
+      "network": "Channel 4",
+      "reason": "Dark conspiracy thriller about a mysterious graphic novel and pandemic manipulation with tight cast and relentless momentum. Combines tech paranoia with survival elements in a controlled, arc-driven narrative."
+    },
+    {
+      "id": "deutschland-83",
+      "title": "Deutschland 83",
+      "tmdb_id": 60574,
+      "total_seasons": 3,
+      "show_status": "Ended",
+      "network": "SundanceTV",
+      "reason": "Cold War espionage series following an East German spy with tight season-long arcs and political complexity. Features morally ambiguous characters navigating survival and ideology without sprawl or filler."
+    },
+    {
+      "id": "the-shield",
+      "title": "The Shield",
+      "tmdb_id": 1443,
+      "total_seasons": 7,
+      "show_status": "Ended",
+      "network": "FX",
+      "reason": "Police corruption drama with relentless narrative momentum and morally complex protagonist facing escalating consequences. Every season builds toward the inevitable downfall with tight plotting and no wasted episodes."
     }
   ],
   "finished_watching": [
