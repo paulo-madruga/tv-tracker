@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-02T11:10:54.647086+00:00",
+  "last_updated": "2026-03-02T22:21:04.177Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -356,15 +356,6 @@
       "show_status": "Ended",
       "network": "SundanceTV",
       "reason": "Cold War espionage series following an East German spy with tight season-long arcs and political complexity. Features morally ambiguous characters navigating survival and ideology without sprawl or filler."
-    },
-    {
-      "id": "the-shield",
-      "title": "The Shield",
-      "tmdb_id": 1443,
-      "total_seasons": 7,
-      "show_status": "Ended",
-      "network": "FX",
-      "reason": "Police corruption drama with relentless narrative momentum and morally complex protagonist facing escalating consequences. Every season builds toward the inevitable downfall with tight plotting and no wasted episodes."
     }
   ],
   "finished_watching": [
