@@ -1016,6 +1016,7 @@ function cardAvailable(s) {
     </div>
     <div class="card-actions">
       <button class="btn btn-primary btn-sm" onclick="startWatching('${s.id}')">START WATCHING</button>
+      <button class="btn btn-ghost btn-sm" onclick="moveToWaiting('${s.id}')">MOVE TO WAITING</button>
     </div>
   </div>`;
 }
@@ -1029,7 +1030,8 @@ function cardWaiting(s) {
       ${s.notes ? `<div class="card-blurb" style="color:var(--text3);font-size:11px;">${esc(s.notes)}</div>` : ''}
     </div>
     <div class="card-actions">
-      <span class="badge badge-ended">WAITING</span>
+      <button class="btn btn-ghost btn-sm" onclick="moveWaitingToAvailable('${s.id}')">AVAILABLE NOW</button>
+      <button class="btn btn-ghost btn-sm" onclick="openFinishFromWaiting('${s.id}')">MARK FINISHED</button>
     </div>
   </div>`;
 }
@@ -1186,6 +1188,68 @@ async function removeFromExplore(id) {
   DB.series_to_explore = DB.series_to_explore.filter(s => s.id !== id);
   render();
   await pushToGithub();
+}
+
+// Move from Available Next to Waiting
+async function moveToWaiting(id) {
+  const show = DB.available_to_watch_next.find(s => s.id === id);
+  if (!show) return;
+  DB.available_to_watch_next = DB.available_to_watch_next.filter(s => s.id !== id);
+  DB.waiting_for_next_season = DB.waiting_for_next_season.filter(s => s.id !== id);
+  DB.waiting_for_next_season.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    seasons_watched: show.next_season - 1,
+    total_seasons: show.total_seasons,
+    show_status: show.show_status,
+    network: show.network || '',
+    notes: show.notes || '',
+    expected_date: null
+  });
+  render();
+  await pushToGithub();
+  toast('Moved to Waiting for Next Season.', 'ok');
+}
+
+// Move from Waiting to Available Next (manual override)
+async function moveWaitingToAvailable(id) {
+  const show = DB.waiting_for_next_season.find(s => s.id === id);
+  if (!show) return;
+  DB.waiting_for_next_season = DB.waiting_for_next_season.filter(s => s.id !== id);
+  DB.available_to_watch_next = DB.available_to_watch_next.filter(s => s.id !== id);
+  DB.available_to_watch_next.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    next_season: show.seasons_watched + 1,
+    total_seasons: show.total_seasons,
+    show_status: show.show_status,
+    network: show.network || '',
+    notes: show.notes || ''
+  });
+  render();
+  await pushToGithub();
+  toast('Moved to Available Next.', 'ok');
+}
+
+// Mark finished directly from Waiting
+function openFinishFromWaiting(id) {
+  const show = DB.waiting_for_next_season.find(s => s.id === id);
+  if (!show) return;
+  // Temporarily move to watching_now so finish modal works
+  DB.waiting_for_next_season = DB.waiting_for_next_season.filter(s => s.id !== id);
+  DB.watching_now.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    current_season: show.seasons_watched,
+    total_seasons: show.total_seasons,
+    show_status: 'Ended',
+    network: show.network || '',
+    notes: show.notes || ''
+  });
+  openFinishModal(id);
 }
 
 // Move back to Available Next
