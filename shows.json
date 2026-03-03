@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-03T22:45:58.016Z",
+  "last_updated": "2026-03-03T22:46:06.679Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -20,15 +20,6 @@
       "show_status": "Ended",
       "notes": "Final season",
       "network": "Netflix"
-    },
-    {
-      "id": "the-americans",
-      "title": "The Americans",
-      "tmdb_id": 2406,
-      "current_season": 1,
-      "total_seasons": 6,
-      "show_status": "Ended",
-      "notes": ""
     }
   ],
   "available_to_watch_next": [
@@ -368,6 +359,17 @@
     }
   ],
   "finished_watching": [
+    {
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 2406,
+      "rating": "Abandoned Halfway",
+      "seasons_watched": 1,
+      "total_seasons": 6,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": "2026-03-03"
+    },
     {
       "id": "the-old-man",
       "title": "The Old Man",
