@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-02T22:21:07.064Z",
+  "last_updated": "2026-03-03T22:42:24.249209+00:00",
   "watching_now": [
     {
       "id": "shrinking",
@@ -71,7 +71,7 @@
       "tmdb_id": 106379,
       "seasons_watched": 2,
       "total_seasons": 2,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": null,
       "network": "Prime Video"
@@ -82,7 +82,7 @@
       "tmdb_id": 114479,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
+      "show_status": "Canceled",
       "notes": "Status unconfirmed",
       "expected_date": null,
       "network": "Disney+"
@@ -92,8 +92,8 @@
       "title": "Formula 1: Drive to Survive",
       "tmdb_id": 81086,
       "seasons_watched": 7,
-      "total_seasons": 7,
-      "show_status": "Continuing",
+      "total_seasons": 2,
+      "show_status": "Ended",
       "notes": "",
       "expected_date": "March 2026",
       "network": "Netflix"
@@ -104,7 +104,7 @@
       "tmdb_id": 94997,
       "seasons_watched": 2,
       "total_seasons": 3,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": "June 2026",
       "network": "HBO Max"
@@ -115,7 +115,7 @@
       "tmdb_id": 114461,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": "2026",
       "network": "Disney+"
@@ -126,7 +126,7 @@
       "tmdb_id": 100088,
       "seasons_watched": 2,
       "total_seasons": 2,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": "2027",
       "network": "HBO Max"
@@ -137,7 +137,7 @@
       "tmdb_id": 108978,
       "seasons_watched": 3,
       "total_seasons": 3,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "Pre-production underway",
       "expected_date": "2026",
       "network": "Prime Video"
@@ -147,8 +147,8 @@
       "title": "Quarterback",
       "tmdb_id": 228891,
       "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
+      "total_seasons": 1,
+      "show_status": "Returning Series",
       "notes": "S3 not yet announced",
       "expected_date": null,
       "network": "Netflix"
@@ -158,8 +158,8 @@
       "title": "Alien: Earth",
       "tmdb_id": 202555,
       "seasons_watched": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
+      "total_seasons": 2,
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": null,
       "network": "Hulu"
@@ -170,7 +170,7 @@
       "tmdb_id": 84773,
       "seasons_watched": 2,
       "total_seasons": 3,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": null,
       "network": "Prime Video"
@@ -331,22 +331,40 @@
   ],
   "claude_recommendations": [
     {
-      "id": "utopia",
-      "title": "Utopia",
-      "tmdb_id": 52814,
-      "total_seasons": 2,
+      "id": "homeland",
+      "title": "Homeland",
+      "tmdb_id": 1407,
+      "total_seasons": 8,
       "show_status": "Ended",
-      "network": "Channel 4",
-      "reason": "Dark conspiracy thriller about a mysterious graphic novel and pandemic manipulation with tight cast and relentless momentum. Combines tech paranoia with survival elements in a controlled, arc-driven narrative."
+      "network": "Showtime",
+      "reason": "Espionage thriller with morally complex characters and tight season-long arcs focused on national security paranoia. Each season maintains narrative momentum while exploring themes of surveillance, loyalty, and psychological manipulation."
     },
     {
-      "id": "deutschland-83",
-      "title": "Deutschland 83",
-      "tmdb_id": 60574,
-      "total_seasons": 3,
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 2406,
+      "total_seasons": 6,
       "show_status": "Ended",
-      "network": "SundanceTV",
-      "reason": "Cold War espionage series following an East German spy with tight season-long arcs and political complexity. Features morally ambiguous characters navigating survival and ideology without sprawl or filler."
+      "network": "FX",
+      "reason": "Cold War espionage drama with a controlled cast and consistent dark tone exploring loyalty, identity, and moral compromise. Every episode advances the central narrative of deep cover Soviet agents living as Americans."
+    },
+    {
+      "id": "counterpart",
+      "title": "Counterpart",
+      "tmdb_id": 69740,
+      "total_seasons": 2,
+      "show_status": "Ended",
+      "network": "Starz",
+      "reason": "Sci-fi espionage thriller with parallel dimensions that maintains tight narrative focus and explores themes of identity and surveillance. Features morally complex characters in a controlled, thematically coherent story about bureaucratic power struggles."
+    },
+    {
+      "id": "mare-of-easttown",
+      "title": "Mare of Easttown",
+      "tmdb_id": 85552,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "network": "HBO",
+      "reason": "Tightly plotted murder mystery with strong character development and consistent momentum toward resolution. Features morally complex characters in a small-town setting with serious, intelligent writing that avoids mystery-box tactics."
     }
   ],
   "finished_watching": [
