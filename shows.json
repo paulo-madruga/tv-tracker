@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-03T22:42:24.249209+00:00",
+  "last_updated": "2026-03-03T22:45:58.016Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -20,6 +20,15 @@
       "show_status": "Ended",
       "notes": "Final season",
       "network": "Netflix"
+    },
+    {
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 2406,
+      "current_season": 1,
+      "total_seasons": 6,
+      "show_status": "Ended",
+      "notes": ""
     }
   ],
   "available_to_watch_next": [
@@ -338,15 +347,6 @@
       "show_status": "Ended",
       "network": "Showtime",
       "reason": "Espionage thriller with morally complex characters and tight season-long arcs focused on national security paranoia. Each season maintains narrative momentum while exploring themes of surveillance, loyalty, and psychological manipulation."
-    },
-    {
-      "id": "the-americans",
-      "title": "The Americans",
-      "tmdb_id": 2406,
-      "total_seasons": 6,
-      "show_status": "Ended",
-      "network": "FX",
-      "reason": "Cold War espionage drama with a controlled cast and consistent dark tone exploring loyalty, identity, and moral compromise. Every episode advances the central narrative of deep cover Soviet agents living as Americans."
     },
     {
       "id": "counterpart",
