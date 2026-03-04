@@ -557,6 +557,21 @@
     margin-top: 2px;
   }
 
+  .dismiss-select {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    background: var(--surface2);
+    color: var(--text2);
+    border: 1px solid var(--border2);
+    border-radius: 3px;
+    padding: 4px 6px;
+    cursor: pointer;
+    max-width: 150px;
+  }
+
+  .dismiss-select:focus { outline: none; border-color: var(--accent); }
+
   .network-badge {
     font-family: var(--mono);
     font-size: 9px;
@@ -1051,15 +1066,30 @@ function cardExplore(s) {
   </div>`;
 }
 
+const DISMISS_REASONS = [
+  { value: 'not_interested', label: 'Not interested' },
+  { value: 'no_service', label: 'No streaming service' },
+  { value: 'seen_it', label: 'Already seen it' },
+  { value: 'wrong_genre', label: 'Wrong genre / tone' },
+  { value: 'too_long', label: 'Too many seasons' },
+  { value: 'other', label: 'Other' }
+];
+
 function cardReco(s, i) {
+  const reasonOptions = DISMISS_REASONS.map(r =>
+    `<option value="${r.value}">${r.label}</option>`
+  ).join('');
   return `<div class="reco-card">
     <div class="reco-rank">#${i+1} RECOMMENDED</div>
     <div class="reco-title">${esc(s.title)}</div>
     <div class="card-meta" style="margin-top:4px;">${s.total_seasons ? `<span>${s.total_seasons}</span> seasons · ` : ''}${statusBadge(s.show_status)}${s.network ? ` · <span class="network-badge">${esc(s.network)}</span>` : ''}</div>
     ${s.reason ? `<div class="reco-reason">${esc(s.reason)}</div>` : ''}
-    <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;">
+    <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
       <button class="btn btn-primary btn-sm" onclick="startFromReco('${s.id}')">WATCH NOW</button>
       <button class="btn btn-ghost btn-sm" onclick="addRecoToExplore('${s.id}')">ADD TO EXPLORE</button>
+      <select id="dismiss-reason-${s.id}" class="dismiss-select">
+        ${reasonOptions}
+      </select>
       <button class="btn btn-ghost btn-sm" onclick="dismissReco('${s.id}')">DISMISS</button>
     </div>
   </div>`;
@@ -1179,9 +1209,30 @@ async function addRecoToExplore(id) {
 }
 
 async function dismissReco(id) {
+  const show = DB.claude_recommendations.find(s => s.id === id);
+  if (!show) return;
+
+  const reasonEl = document.getElementById('dismiss-reason-' + id);
+  const reason = reasonEl ? reasonEl.value : 'not_interested';
+  const reasonLabel = DISMISS_REASONS.find(r => r.value === reason)?.label || reason;
+
+  if (!DB.dismissed_recommendations) DB.dismissed_recommendations = [];
+  // Avoid duplicates
+  DB.dismissed_recommendations = DB.dismissed_recommendations.filter(s => s.id !== id);
+  DB.dismissed_recommendations.push({
+    id: show.id,
+    title: show.title,
+    tmdb_id: show.tmdb_id,
+    network: show.network || '',
+    dismiss_reason: reason,
+    dismiss_reason_label: reasonLabel,
+    dismissed_at: new Date().toISOString().slice(0, 10)
+  });
+
   DB.claude_recommendations = DB.claude_recommendations.filter(s => s.id !== id);
   render();
   await pushToGithub();
+  toast(`Dismissed: ${reasonLabel}`, 'ok');
 }
 
 async function removeFromExplore(id) {
