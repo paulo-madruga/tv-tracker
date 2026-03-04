@@ -166,46 +166,78 @@ def generate_recommendations(db):
         print("  SKIP (no Anthropic key)")
         return
 
-    series_to_explore_titles = [s['title'] for s in db.get('series_to_explore', [])]
+    existing_recos = db.get('claude_recommendations', [])
+    slots_needed = 5 - len(existing_recos)
+
+    if slots_needed <= 0:
+        print("  Already have 5 recommendations — skipping.")
+        return
+
+    print(f"  Have {len(existing_recos)} existing recos. Need {slots_needed} more.")
+
     finished = db.get('finished_watching', [])
     excellent = [s['title'] for s in finished if s.get('rating') == 'Excellent']
     good = [s['title'] for s in finished if s.get('rating') == 'Good']
     abandoned = [s['title'] for s in finished if s.get('rating') == 'Abandoned Halfway']
 
+    # Build full exclusion set — everything already tracked
     all_titles = set()
     for list_name in ['watching_now', 'available_to_watch_next', 'waiting_for_next_season',
-                      'series_to_explore', 'claude_recommendations', 'finished_watching']:
+                      'series_to_explore', 'claude_recommendations', 'finished_watching',
+                      'dismissed_recommendations']:
         for show in db.get(list_name, []):
             all_titles.add(show.get('title', '').lower())
 
-    prompt = f"""{TASTE_PROFILE}
+    # Build dismissed context grouped by reason
+    dismissed = db.get('dismissed_recommendations', [])
+    by_reason = {}
+    for s in dismissed:
+        r = s.get('dismiss_reason', 'other')
+        by_reason.setdefault(r, []).append(s['title'])
 
-CURRENT DATA:
-Excellent: {', '.join(excellent) or 'none'}
-Good: {', '.join(good) or 'none'}
-Abandoned: {', '.join(abandoned) or 'none'}
-Already tracked (DO NOT recommend any of these): {', '.join(sorted(all_titles)) or 'none'}
+    dismissed_lines = []
+    reason_instructions = {
+        'not_interested': 'Previously recommended but REJECTED — adjust taste model away from these shows and similar ones',
+        'no_service':     'Dismissed — unavailable on user subscriptions (Apple TV+, HBO/Max, Netflix, Prime Video, Disney+)',
+        'wrong_genre':    'Dismissed — wrong genre or tone — use to refine taste model away from similar shows',
+        'too_long':       'Dismissed — too many seasons — prefer shows under 5 seasons where possible',
+        'seen_it':        'Already seen — do not recommend',
+        'other':          'Dismissed for other reasons — do not re-recommend',
+    }
+    for reason, titles in by_reason.items():
+        instruction = reason_instructions.get(reason, 'Dismissed — do not re-recommend')
+        dismissed_lines.append(f"{instruction}: {', '.join(titles)}")
 
-Generate exactly 3-5 TV series recommendations that are NOT any of the above shows.
-For each, provide:
-- title (exact official title)
-- tmdb_id (numeric TMDB ID -- be accurate)
-- total_seasons (integer, current count)
-- show_status ("Ended" or "Continuing")
-- network (streaming service, e.g. "Apple TV+", "HBO", "Netflix", "Prime Video", "Disney+", "Hulu")
-- reason (2 sentences max: why it fits Paulo's taste profile specifically)
+    dismissed_context = ('\n' + '\n'.join(dismissed_lines)) if dismissed_lines else ''
 
-Return ONLY valid JSON array, no markdown, no explanation:
-[
-  {{
-    "title": "...",
-    "tmdb_id": 12345,
-    "total_seasons": 3,
-    "show_status": "Ended",
-    "network": "Netflix",
-    "reason": "..."
-  }}
-]"""
+    prompt = (
+        TASTE_PROFILE +
+        "\n\nCURRENT DATA:"
+        "\nExcellent: " + (', '.join(excellent) or 'none') +
+        "\nGood: " + (', '.join(good) or 'none') +
+        "\nAbandoned: " + (', '.join(abandoned) or 'none') +
+        dismissed_context +
+        "\nAlready tracked (DO NOT recommend any of these): " + (', '.join(sorted(all_titles)) or 'none') +
+        "\n\nGenerate exactly " + str(slots_needed) + " TV series recommendation(s) that are NOT any of the above shows."
+        "\nFor each, provide:"
+        "\n- title (exact official title)"
+        "\n- tmdb_id (numeric TMDB ID -- be accurate)"
+        "\n- total_seasons (integer, current count)"
+        "\n- show_status (\"Ended\" or \"Continuing\")"
+        "\n- network (streaming service, e.g. \"Apple TV+\", \"HBO\", \"Netflix\", \"Prime Video\", \"Disney+\", \"Hulu\")"
+        "\n- reason (2 sentences max: why it fits Paulo's taste profile specifically)"
+        "\n\nReturn ONLY valid JSON array, no markdown, no explanation:"
+        "\n["
+        "\n  {"
+        "\n    \"title\": \"...\","
+        "\n    \"tmdb_id\": 12345,"
+        "\n    \"total_seasons\": 3,"
+        "\n    \"show_status\": \"Ended\","
+        "\n    \"network\": \"Netflix\","
+        "\n    \"reason\": \"...\""
+        "\n  }"
+        "\n]"
+    )
 
     import anthropic
     client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
@@ -225,8 +257,8 @@ Return ONLY valid JSON array, no markdown, no explanation:
         print(f"  Claude error: {e}")
         return
 
-    clean = []
     seen = set(all_titles)
+    new_recos = []
 
     for r in recommendations:
         title = r.get('title', '').strip()
@@ -234,7 +266,7 @@ Return ONLY valid JSON array, no markdown, no explanation:
             print(f"  Dedup skip: {title}")
             continue
         show_id = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
-        clean.append({
+        new_recos.append({
             'id': show_id,
             'title': title,
             'tmdb_id': r.get('tmdb_id'),
@@ -244,10 +276,13 @@ Return ONLY valid JSON array, no markdown, no explanation:
             'reason': r.get('reason', '')
         })
         seen.add(title.lower())
+        if len(new_recos) >= slots_needed:
+            break
 
-    db['claude_recommendations'] = clean[:5]
-    print(f"  Generated {len(clean)} recommendations")
-    for r in clean:
+    # Append new recos to existing ones (preserve undismissed)
+    db['claude_recommendations'] = existing_recos + new_recos
+    print(f"  Added {len(new_recos)} new recommendations (total: {len(db['claude_recommendations'])})")
+    for r in new_recos:
         print(f"    . {r['title']} ({r.get('network','')}): {r['reason'][:80]}...")
 
 # ── MAIN ───────────────────────────────────────────────────────────────────
