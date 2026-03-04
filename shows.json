@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-02T11:10:54.647086+00:00",
+  "last_updated": "2026-03-04T19:00:08.678Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -330,15 +330,6 @@
     }
   ],
   "claude_recommendations": [
-    {
-      "id": "the-americans",
-      "title": "The Americans",
-      "tmdb_id": 2406,
-      "total_seasons": 6,
-      "show_status": "Ended",
-      "network": "FX",
-      "reason": "Espionage thriller with tight narrative focus on Soviet deep-cover agents, featuring morally complex characters and escalating tension. Every episode serves the central arc of family vs. duty with no filler content."
-    },
     {
       "id": "utopia",
       "title": "Utopia",
