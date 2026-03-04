@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-04T19:00:08.678Z",
+  "last_updated": "2026-03-04T19:01:02.163638+00:00",
   "watching_now": [
     {
       "id": "shrinking",
@@ -71,7 +71,7 @@
       "tmdb_id": 106379,
       "seasons_watched": 2,
       "total_seasons": 2,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": null,
       "network": "Prime Video"
@@ -82,7 +82,7 @@
       "tmdb_id": 114479,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
+      "show_status": "Canceled",
       "notes": "Status unconfirmed",
       "expected_date": null,
       "network": "Disney+"
@@ -92,8 +92,8 @@
       "title": "Formula 1: Drive to Survive",
       "tmdb_id": 81086,
       "seasons_watched": 7,
-      "total_seasons": 7,
-      "show_status": "Continuing",
+      "total_seasons": 2,
+      "show_status": "Ended",
       "notes": "",
       "expected_date": "March 2026",
       "network": "Netflix"
@@ -104,7 +104,7 @@
       "tmdb_id": 94997,
       "seasons_watched": 2,
       "total_seasons": 3,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": "June 2026",
       "network": "HBO Max"
@@ -115,7 +115,7 @@
       "tmdb_id": 114461,
       "seasons_watched": 1,
       "total_seasons": 1,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": "2026",
       "network": "Disney+"
@@ -126,7 +126,7 @@
       "tmdb_id": 100088,
       "seasons_watched": 2,
       "total_seasons": 2,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": "2027",
       "network": "HBO Max"
@@ -137,7 +137,7 @@
       "tmdb_id": 108978,
       "seasons_watched": 3,
       "total_seasons": 3,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "Pre-production underway",
       "expected_date": "2026",
       "network": "Prime Video"
@@ -147,8 +147,8 @@
       "title": "Quarterback",
       "tmdb_id": 228891,
       "seasons_watched": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
+      "total_seasons": 1,
+      "show_status": "Returning Series",
       "notes": "S3 not yet announced",
       "expected_date": null,
       "network": "Netflix"
@@ -158,8 +158,8 @@
       "title": "Alien: Earth",
       "tmdb_id": 202555,
       "seasons_watched": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
+      "total_seasons": 2,
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": null,
       "network": "Hulu"
@@ -170,7 +170,7 @@
       "tmdb_id": 84773,
       "seasons_watched": 2,
       "total_seasons": 3,
-      "show_status": "Continuing",
+      "show_status": "Returning Series",
       "notes": "",
       "expected_date": null,
       "network": "Prime Video"
@@ -356,6 +356,24 @@
       "show_status": "Ended",
       "network": "FX",
       "reason": "Police corruption drama with relentless narrative momentum and morally complex protagonist facing escalating consequences. Every season builds toward the inevitable downfall with tight plotting and no wasted episodes."
+    },
+    {
+      "id": "counterpart",
+      "title": "Counterpart",
+      "tmdb_id": 69740,
+      "total_seasons": 2,
+      "show_status": "Ended",
+      "network": "Starz",
+      "reason": "Tight espionage thriller with parallel worlds concept that maintains controlled cast and laser focus on central mystery. Every episode drives the main arc forward with morally complex characters navigating identity and loyalty in a dark, intelligent narrative."
+    },
+    {
+      "id": "the-americans",
+      "title": "The Americans",
+      "tmdb_id": 1406,
+      "total_seasons": 6,
+      "show_status": "Ended",
+      "network": "FX",
+      "reason": "Masterful Cold War espionage series with morally complex Russian sleeper agents, featuring tight season-long arcs and controlled cast. Dark tone with political intrigue that maintains narrative momentum throughout its complete run without quality decline."
     }
   ],
   "finished_watching": [
