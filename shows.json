@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-04T21:25:42.545Z",
+  "last_updated": "2026-03-09T11:11:13.222698+00:00",
   "watching_now": [
     {
       "id": "shrinking",
@@ -356,6 +356,24 @@
       "show_status": "Ended",
       "network": "Starz",
       "reason": "Tight espionage thriller with parallel worlds concept that maintains controlled cast and laser focus on central mystery. Every episode drives the main arc forward with morally complex characters navigating identity and loyalty in a dark, intelligent narrative."
+    },
+    {
+      "id": "condor",
+      "title": "Condor",
+      "tmdb_id": 79008,
+      "total_seasons": 2,
+      "show_status": "Ended",
+      "network": "Epix",
+      "reason": "Tightly plotted espionage thriller with morally complex characters and every episode advancing the central conspiracy narrative. Features tech paranoia and political power struggles with a controlled cast and dark, intelligent writing throughout."
+    },
+    {
+      "id": "years-and-years",
+      "title": "Years and Years",
+      "tmdb_id": 85271,
+      "total_seasons": 1,
+      "show_status": "Ended",
+      "network": "BBC One",
+      "reason": "Dystopian political thriller tracking one family through near-future societal collapse with tight narrative focus and no filler. Dark, morally complex examination of tech paranoia and political power with controlled cast and cohesive thematic arc."
     }
   ],
   "finished_watching": [
