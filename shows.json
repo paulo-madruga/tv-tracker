@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-09T11:11:13.222698+00:00",
+  "last_updated": "2026-03-09T23:20:15.068Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -20,6 +20,15 @@
       "show_status": "Ended",
       "notes": "Final season",
       "network": "Netflix"
+    },
+    {
+      "id": "silo",
+      "title": "Silo",
+      "tmdb_id": 125988,
+      "current_season": 1,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "S1: 88%, S2: 96% RT"
     }
   ],
   "available_to_watch_next": [
@@ -296,16 +305,6 @@
       "show_status": "Continuing",
       "blurb": "High-concept sci-fi about a physicist thrust into parallel realities. Balances action with moral dilemmas.",
       "notes": "S1: 82% RT",
-      "network": "Apple TV+"
-    },
-    {
-      "id": "silo",
-      "title": "Silo",
-      "tmdb_id": 125988,
-      "total_seasons": 2,
-      "show_status": "Continuing",
-      "blurb": "Dystopian mystery set in a subterranean silo. Strong world-building, suspense and rebellion against an oppressive system.",
-      "notes": "S1: 88%, S2: 96% RT",
       "network": "Apple TV+"
     },
     {
