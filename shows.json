@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-10T11:53:27.542Z",
+  "last_updated": "2026-03-10T11:53:50.586Z",
   "watching_now": [
     {
       "id": "shrinking",
@@ -29,16 +29,6 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "notes": "S1: 88%, S2: 96% RT"
-    },
-    {
-      "id": "industry",
-      "title": "Industry",
-      "tmdb_id": 90812,
-      "current_season": 1,
-      "total_seasons": 4,
-      "show_status": "Continuing",
-      "network": "",
-      "notes": ""
     }
   ],
   "available_to_watch_next": [
@@ -81,6 +71,16 @@
       "show_status": "Continuing",
       "notes": "",
       "network": "HBO Max"
+    },
+    {
+      "id": "industry",
+      "title": "Industry",
+      "tmdb_id": 90812,
+      "next_season": 1,
+      "total_seasons": 4,
+      "show_status": "Continuing",
+      "network": "",
+      "notes": ""
     }
   ],
   "waiting_for_next_season": [
