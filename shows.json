@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-23T11:33:22.323372+00:00",
+  "last_updated": "2026-03-30T12:04:42.611082+00:00",
   "watching_now": [
     {
       "id": "shrinking",
@@ -80,6 +80,16 @@
       "total_seasons": 4,
       "show_status": "Continuing",
       "network": "",
+      "notes": ""
+    },
+    {
+      "id": "alien-earth",
+      "title": "Alien: Earth",
+      "tmdb_id": 202555,
+      "next_season": 2,
+      "total_seasons": 2,
+      "show_status": "Returning Series",
+      "network": "Hulu",
       "notes": ""
     }
   ],
@@ -171,17 +181,6 @@
       "notes": "S3 not yet announced",
       "expected_date": null,
       "network": "Netflix"
-    },
-    {
-      "id": "alien-earth",
-      "title": "Alien: Earth",
-      "tmdb_id": 202555,
-      "seasons_watched": 1,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
-      "notes": "",
-      "expected_date": null,
-      "network": "Hulu"
     },
     {
       "id": "rings-of-power",
