@@ -1,16 +1,6 @@
 {
-  "last_updated": "2026-04-06T10:08:53.030248+00:00",
+  "last_updated": "2026-04-09T01:52:44.643Z",
   "watching_now": [
-    {
-      "id": "shrinking",
-      "title": "Shrinking",
-      "tmdb_id": 136315,
-      "current_season": 3,
-      "total_seasons": 3,
-      "show_status": "Continuing",
-      "notes": "",
-      "network": "Apple TV+"
-    },
     {
       "id": "mindhunter",
       "title": "Mindhunter",
@@ -203,6 +193,16 @@
       "notes": "",
       "expected_date": null,
       "network": ""
+    },
+    {
+      "id": "shrinking",
+      "title": "Shrinking",
+      "tmdb_id": 136315,
+      "seasons_watched": 3,
+      "total_seasons": 3,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
     }
   ],
   "series_to_explore": [
