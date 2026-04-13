@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-10T00:10:49.147Z",
+  "last_updated": "2026-04-13T09:37:22.235Z",
   "watching_now": [
     {
       "id": "mindhunter",
@@ -10,6 +10,15 @@
       "show_status": "Ended",
       "notes": "Final season",
       "network": "Netflix"
+    },
+    {
+      "id": "silo",
+      "title": "Silo",
+      "tmdb_id": 125988,
+      "current_season": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": ""
     }
   ],
   "available_to_watch_next": [
@@ -71,15 +80,6 @@
       "total_seasons": 2,
       "show_status": "Returning Series",
       "network": "Hulu",
-      "notes": ""
-    },
-    {
-      "id": "silo",
-      "title": "Silo",
-      "tmdb_id": 125988,
-      "next_season": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
       "notes": ""
     }
   ],
