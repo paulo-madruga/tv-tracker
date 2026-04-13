@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-13T09:37:22.235Z",
+  "last_updated": "2026-04-13T10:44:50.428958+00:00",
   "watching_now": [
     {
       "id": "mindhunter",
@@ -80,6 +80,16 @@
       "total_seasons": 2,
       "show_status": "Returning Series",
       "network": "Hulu",
+      "notes": ""
+    },
+    {
+      "id": "shrinking",
+      "title": "Shrinking",
+      "tmdb_id": 136315,
+      "next_season": 4,
+      "total_seasons": 4,
+      "show_status": "Returning Series",
+      "network": "",
       "notes": ""
     }
   ],
@@ -193,16 +203,6 @@
       "notes": "",
       "expected_date": null,
       "network": ""
-    },
-    {
-      "id": "shrinking",
-      "title": "Shrinking",
-      "tmdb_id": 136315,
-      "seasons_watched": 3,
-      "total_seasons": 3,
-      "show_status": "Continuing",
-      "notes": "",
-      "expected_date": null
     }
   ],
   "series_to_explore": [
