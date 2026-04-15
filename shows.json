@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-15T01:00:04.952Z",
+  "last_updated": "2026-04-15T01:10:39.992Z",
   "watching_now": [
     {
       "id": "silo",
@@ -60,16 +60,6 @@
       "total_seasons": 4,
       "show_status": "Continuing",
       "network": "",
-      "notes": ""
-    },
-    {
-      "id": "alien-earth",
-      "title": "Alien: Earth",
-      "tmdb_id": 202555,
-      "next_season": 2,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
-      "network": "Hulu",
       "notes": ""
     },
     {
@@ -193,6 +183,17 @@
       "notes": "",
       "expected_date": null,
       "network": ""
+    },
+    {
+      "id": "alien-earth",
+      "title": "Alien: Earth",
+      "tmdb_id": 202555,
+      "seasons_watched": 1,
+      "total_seasons": 2,
+      "show_status": "Returning Series",
+      "network": "Hulu",
+      "notes": "",
+      "expected_date": null
     }
   ],
   "series_to_explore": [
