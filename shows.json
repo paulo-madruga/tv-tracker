@@ -1,16 +1,6 @@
 {
-  "last_updated": "2026-04-13T10:44:50.428958+00:00",
+  "last_updated": "2026-04-15T01:00:04.952Z",
   "watching_now": [
-    {
-      "id": "mindhunter",
-      "title": "Mindhunter",
-      "tmdb_id": 67744,
-      "current_season": 2,
-      "total_seasons": 2,
-      "show_status": "Ended",
-      "notes": "Final season",
-      "network": "Netflix"
-    },
     {
       "id": "silo",
       "title": "Silo",
@@ -385,6 +375,17 @@
     }
   ],
   "finished_watching": [
+    {
+      "id": "mindhunter",
+      "title": "Mindhunter",
+      "tmdb_id": 67744,
+      "rating": "Excellent",
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "status": "Ended",
+      "notes": "Slow burn but gripping with high stakes constantly",
+      "date_finished": "2026-04-15"
+    },
     {
       "id": "the-old-man",
       "title": "The Old Man",
