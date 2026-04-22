@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-20T10:47:35.985635+00:00",
+  "last_updated": "2026-04-22T23:30:27.925Z",
   "watching_now": [
     {
       "id": "silo",
@@ -9,6 +9,15 @@
       "total_seasons": 2,
       "show_status": "Continuing",
       "notes": ""
+    },
+    {
+      "id": "andor",
+      "title": "Star Wars: Andor",
+      "tmdb_id": 83867,
+      "current_season": 2,
+      "total_seasons": 2,
+      "show_status": "Ended",
+      "notes": "Watch Rogue One afterwards"
     }
   ],
   "available_to_watch_next": [
@@ -21,16 +30,6 @@
       "show_status": "Continuing",
       "notes": "",
       "network": "Apple TV+"
-    },
-    {
-      "id": "andor",
-      "title": "Star Wars: Andor",
-      "tmdb_id": 83867,
-      "next_season": 2,
-      "total_seasons": 2,
-      "show_status": "Ended",
-      "notes": "Watch Rogue One afterwards",
-      "network": "Disney+"
     },
     {
       "id": "dune-prophecy",
