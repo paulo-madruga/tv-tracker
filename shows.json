@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-22T23:30:27.925Z",
+  "last_updated": "2026-04-23T01:26:14.002Z",
   "watching_now": [
     {
       "id": "silo",
@@ -58,16 +58,6 @@
       "next_season": 1,
       "total_seasons": 4,
       "show_status": "Continuing",
-      "network": "",
-      "notes": ""
-    },
-    {
-      "id": "shrinking",
-      "title": "Shrinking",
-      "tmdb_id": 136315,
-      "next_season": 4,
-      "total_seasons": 4,
-      "show_status": "Returning Series",
       "network": "",
       "notes": ""
     },
@@ -192,6 +182,17 @@
       "notes": "",
       "expected_date": null,
       "network": ""
+    },
+    {
+      "id": "shrinking",
+      "title": "Shrinking",
+      "tmdb_id": 136315,
+      "seasons_watched": 3,
+      "total_seasons": 4,
+      "show_status": "Returning Series",
+      "network": "",
+      "notes": "",
+      "expected_date": null
     }
   ],
   "series_to_explore": [
