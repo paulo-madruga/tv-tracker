@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-30T01:37:40.090Z",
+  "last_updated": "2026-04-30T01:39:03.006Z",
   "watching_now": [
     {
       "id": "silo",
@@ -18,16 +18,6 @@
       "total_seasons": 2,
       "show_status": "Ended",
       "notes": "Watch Rogue One afterwards"
-    },
-    {
-      "id": "ted-lasso",
-      "title": "Ted Lasso",
-      "tmdb_id": 97546,
-      "current_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "network": "",
-      "notes": ""
     }
   ],
   "available_to_watch_next": [
@@ -88,6 +78,16 @@
       "next_season": 4,
       "total_seasons": 4,
       "show_status": "Returning Series",
+      "network": "",
+      "notes": ""
+    },
+    {
+      "id": "ted-lasso",
+      "title": "Ted Lasso",
+      "tmdb_id": 97546,
+      "next_season": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
       "network": "",
       "notes": ""
     }
