@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-05T04:19:27.284Z",
+  "last_updated": "2026-06-05T04:19:35.188Z",
   "watching_now": [
     {
       "id": "andor",
@@ -60,16 +60,6 @@
       "total_seasons": 2,
       "show_status": "Returning Series",
       "network": "Hulu",
-      "notes": ""
-    },
-    {
-      "id": "ted-lasso",
-      "title": "Ted Lasso",
-      "tmdb_id": 97546,
-      "next_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "network": "",
       "notes": ""
     }
   ],
@@ -201,6 +191,17 @@
       "seasons_watched": 3,
       "total_seasons": 4,
       "show_status": "Returning Series",
+      "network": "",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "ted-lasso",
+      "title": "Ted Lasso",
+      "tmdb_id": 97546,
+      "seasons_watched": 0,
+      "total_seasons": 1,
+      "show_status": "Continuing",
       "network": "",
       "notes": "",
       "expected_date": null
