@@ -1,15 +1,6 @@
 {
-  "last_updated": "2026-06-01T15:19:25.116451+00:00",
+  "last_updated": "2026-06-05T04:19:07.365Z",
   "watching_now": [
-    {
-      "id": "silo",
-      "title": "Silo",
-      "tmdb_id": 125988,
-      "current_season": 2,
-      "total_seasons": 2,
-      "show_status": "Continuing",
-      "notes": ""
-    },
     {
       "id": "andor",
       "title": "Star Wars: Andor",
@@ -202,6 +193,16 @@
       "notes": "",
       "expected_date": null,
       "network": ""
+    },
+    {
+      "id": "silo",
+      "title": "Silo",
+      "tmdb_id": 125988,
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
     }
   ],
   "series_to_explore": [
