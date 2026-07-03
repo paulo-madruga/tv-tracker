@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03T22:59:43.294Z",
+  "last_updated": "2026-07-03T23:00:02.797Z",
   "watching_now": [
     {
       "id": "andor",
@@ -70,16 +70,6 @@
       "total_seasons": 4,
       "show_status": "Returning Series",
       "network": "",
-      "notes": ""
-    },
-    {
-      "id": "alien-earth",
-      "title": "Alien: Earth",
-      "tmdb_id": 202555,
-      "next_season": 2,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
-      "network": "Hulu",
       "notes": ""
     },
     {
@@ -200,6 +190,17 @@
       "seasons_watched": 2,
       "total_seasons": 3,
       "show_status": "Returning Series",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "alien-earth",
+      "title": "Alien: Earth",
+      "tmdb_id": 202555,
+      "seasons_watched": 1,
+      "total_seasons": 2,
+      "show_status": "Returning Series",
+      "network": "Hulu",
       "notes": "",
       "expected_date": null
     }
