@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-29T13:05:55.187437+00:00",
+  "last_updated": "2026-07-03T22:59:23.179Z",
   "watching_now": [
     {
       "id": "andor",
@@ -9,16 +9,6 @@
       "total_seasons": 2,
       "show_status": "Ended",
       "notes": "Watch Rogue One afterwards"
-    },
-    {
-      "id": "brazil-70-the-third-star",
-      "title": "Brazil '70: The Third Star",
-      "tmdb_id": 292532,
-      "current_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "network": "Netflix",
-      "notes": ""
     }
   ],
   "available_to_watch_next": [
@@ -210,6 +200,16 @@
       "seasons_watched": 2,
       "total_seasons": 3,
       "show_status": "Returning Series",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "brazil-70-the-third-star",
+      "title": "Brazil '70: The Third Star",
+      "tmdb_id": 292532,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
       "notes": "",
       "expected_date": null
     }
