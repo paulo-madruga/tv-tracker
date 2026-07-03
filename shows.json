@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03T22:59:23.179Z",
+  "last_updated": "2026-07-03T22:59:43.294Z",
   "watching_now": [
     {
       "id": "andor",
@@ -202,16 +202,6 @@
       "show_status": "Returning Series",
       "notes": "",
       "expected_date": null
-    },
-    {
-      "id": "brazil-70-the-third-star",
-      "title": "Brazil '70: The Third Star",
-      "tmdb_id": 292532,
-      "seasons_watched": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": "",
-      "expected_date": null
     }
   ],
   "series_to_explore": [
@@ -394,6 +384,17 @@
     }
   ],
   "finished_watching": [
+    {
+      "id": "brazil-70-the-third-star",
+      "title": "Brazil '70: The Third Star",
+      "tmdb_id": 292532,
+      "rating": "Good",
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": "2026-07-03"
+    },
     {
       "id": "mindhunter",
       "title": "Mindhunter",
