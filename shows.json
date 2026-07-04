@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03T23:00:38.489Z",
+  "last_updated": "2026-07-04T02:12:03.752Z",
   "watching_now": [
     {
       "id": "andor",
@@ -60,6 +60,16 @@
       "total_seasons": 3,
       "show_status": "Returning Series",
       "network": "HBO Max",
+      "notes": ""
+    },
+    {
+      "id": "silo",
+      "title": "Silo",
+      "tmdb_id": 125988,
+      "next_season": 3,
+      "total_seasons": 3,
+      "show_status": "Returning Series",
+      "network": "",
       "notes": ""
     }
   ],
@@ -162,16 +172,6 @@
       "notes": "",
       "expected_date": null,
       "network": ""
-    },
-    {
-      "id": "silo",
-      "title": "Silo",
-      "tmdb_id": 125988,
-      "seasons_watched": 2,
-      "total_seasons": 3,
-      "show_status": "Returning Series",
-      "notes": "",
-      "expected_date": null
     },
     {
       "id": "alien-earth",
