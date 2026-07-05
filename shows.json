@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-04T02:12:03.752Z",
+  "last_updated": "2026-07-05T01:09:39.693Z",
   "watching_now": [
     {
       "id": "andor",
@@ -9,6 +9,15 @@
       "total_seasons": 2,
       "show_status": "Ended",
       "notes": "Watch Rogue One afterwards"
+    },
+    {
+      "id": "a-knight-of-the-seven-kingdoms",
+      "title": "A Knight of the Seven Kingdoms",
+      "tmdb_id": 209867,
+      "current_season": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": ""
     }
   ],
   "available_to_watch_next": [
@@ -26,16 +35,6 @@
       "id": "dune-prophecy",
       "title": "Dune: Prophecy",
       "tmdb_id": 215748,
-      "next_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": "",
-      "network": "HBO Max"
-    },
-    {
-      "id": "a-knight-of-the-seven-kingdoms",
-      "title": "A Knight of the Seven Kingdoms",
-      "tmdb_id": 209867,
       "next_season": 1,
       "total_seasons": 1,
       "show_status": "Continuing",
