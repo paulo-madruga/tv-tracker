@@ -1,15 +1,6 @@
 {
-  "last_updated": "2026-07-06T12:45:28.516735+00:00",
+  "last_updated": "2026-07-09T01:20:11.206Z",
   "watching_now": [
-    {
-      "id": "andor",
-      "title": "Star Wars: Andor",
-      "tmdb_id": 83867,
-      "current_season": 2,
-      "total_seasons": 2,
-      "show_status": "Ended",
-      "notes": "Watch Rogue One afterwards"
-    },
     {
       "id": "a-knight-of-the-seven-kingdoms",
       "title": "A Knight of the Seven Kingdoms",
@@ -383,6 +374,17 @@
     }
   ],
   "finished_watching": [
+    {
+      "id": "andor",
+      "title": "Star Wars: Andor",
+      "tmdb_id": 83867,
+      "rating": "Good",
+      "seasons_watched": 2,
+      "total_seasons": 2,
+      "status": "Ended",
+      "notes": "",
+      "date_finished": "2026-07-09"
+    },
     {
       "id": "brazil-70-the-third-star",
       "title": "Brazil '70: The Third Star",
