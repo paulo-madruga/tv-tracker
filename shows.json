@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-09T01:20:11.206Z",
+  "last_updated": "2026-07-10T10:13:00.237Z",
   "watching_now": [
     {
       "id": "a-knight-of-the-seven-kingdoms",
@@ -8,6 +8,15 @@
       "current_season": 1,
       "total_seasons": 1,
       "show_status": "Continuing",
+      "notes": ""
+    },
+    {
+      "id": "silo",
+      "title": "Silo",
+      "tmdb_id": 125988,
+      "current_season": 3,
+      "total_seasons": 3,
+      "show_status": "Returning Series",
       "notes": ""
     }
   ],
@@ -50,16 +59,6 @@
       "total_seasons": 3,
       "show_status": "Returning Series",
       "network": "HBO Max",
-      "notes": ""
-    },
-    {
-      "id": "silo",
-      "title": "Silo",
-      "tmdb_id": 125988,
-      "next_season": 3,
-      "total_seasons": 3,
-      "show_status": "Returning Series",
-      "network": "",
       "notes": ""
     },
     {
