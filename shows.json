@@ -1,15 +1,6 @@
 {
-  "last_updated": "2026-07-10T10:13:00.237Z",
+  "last_updated": "2026-07-11T01:48:45.574Z",
   "watching_now": [
-    {
-      "id": "a-knight-of-the-seven-kingdoms",
-      "title": "A Knight of the Seven Kingdoms",
-      "tmdb_id": 209867,
-      "current_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": ""
-    },
     {
       "id": "silo",
       "title": "Silo",
@@ -191,6 +182,16 @@
       "notes": "",
       "expected_date": null,
       "network": ""
+    },
+    {
+      "id": "a-knight-of-the-seven-kingdoms",
+      "title": "A Knight of the Seven Kingdoms",
+      "tmdb_id": 209867,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
     }
   ],
   "series_to_explore": [
