@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-21T23:45:40.155Z",
+  "last_updated": "2026-07-21T23:46:14.158Z",
   "watching_now": [
     {
       "id": "silo",
@@ -256,16 +256,6 @@
       "blurb": "Post-apocalyptic drama linking survivors after a flu pandemic. Combines survival themes with hope and artistry.",
       "notes": "98% RT",
       "network": "HBO Max"
-    },
-    {
-      "id": "narcos",
-      "title": "Narcos",
-      "tmdb_id": 63351,
-      "total_seasons": 3,
-      "show_status": "Ended",
-      "blurb": "Chronicles the rise of the Medellin and Cali cartels. Fast-paced and morally complex with emphasis on crime and law enforcement.",
-      "notes": "S1: 79% RT",
-      "network": "Netflix"
     },
     {
       "id": "the-spy",
