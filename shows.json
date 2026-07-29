@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-27T12:21:40.277208+00:00",
+  "last_updated": "2026-07-29T16:40:39.927Z",
   "watching_now": [
     {
       "id": "silo",
@@ -80,6 +80,16 @@
       "show_status": "Ended",
       "network": "",
       "notes": ""
+    },
+    {
+      "id": "quarterback",
+      "title": "Quarterback",
+      "tmdb_id": 228891,
+      "next_season": 3,
+      "total_seasons": 1,
+      "show_status": "Returning Series",
+      "network": "Netflix",
+      "notes": "S3 not yet announced"
     }
   ],
   "waiting_for_next_season": [
@@ -148,17 +158,6 @@
       "notes": "Pre-production underway",
       "expected_date": "2026",
       "network": "Prime Video"
-    },
-    {
-      "id": "quarterback",
-      "title": "Quarterback",
-      "tmdb_id": 228891,
-      "seasons_watched": 2,
-      "total_seasons": 1,
-      "show_status": "Returning Series",
-      "notes": "S3 not yet announced",
-      "expected_date": null,
-      "network": "Netflix"
     },
     {
       "id": "rings-of-power",
