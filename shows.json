@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-07T01:13:49.959Z",
+  "last_updated": "2026-08-07T01:13:53.538Z",
   "watching_now": [
     {
       "id": "silo",
@@ -25,6 +25,15 @@
       "tmdb_id": 94997,
       "current_season": 3,
       "total_seasons": 3,
+      "show_status": "Returning Series",
+      "notes": ""
+    },
+    {
+      "id": "ted-lasso",
+      "title": "Ted Lasso",
+      "tmdb_id": 97546,
+      "current_season": 1,
+      "total_seasons": 4,
       "show_status": "Returning Series",
       "notes": ""
     }
@@ -68,16 +77,6 @@
       "total_seasons": 2,
       "show_status": "Returning Series",
       "network": "Hulu",
-      "notes": ""
-    },
-    {
-      "id": "ted-lasso",
-      "title": "Ted Lasso",
-      "tmdb_id": 97546,
-      "next_season": 1,
-      "total_seasons": 4,
-      "show_status": "Returning Series",
-      "network": "",
       "notes": ""
     },
     {
