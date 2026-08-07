@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-03T12:21:21.426452+00:00",
+  "last_updated": "2026-08-07T01:13:49.959Z",
   "watching_now": [
     {
       "id": "silo",
@@ -17,6 +17,15 @@
       "current_season": 3,
       "total_seasons": 3,
       "show_status": "Continuing",
+      "notes": ""
+    },
+    {
+      "id": "house-of-the-dragon",
+      "title": "House of the Dragon",
+      "tmdb_id": 94997,
+      "current_season": 3,
+      "total_seasons": 3,
+      "show_status": "Returning Series",
       "notes": ""
     }
   ],
@@ -39,16 +48,6 @@
       "total_seasons": 4,
       "show_status": "Continuing",
       "network": "",
-      "notes": ""
-    },
-    {
-      "id": "house-of-the-dragon",
-      "title": "House of the Dragon",
-      "tmdb_id": 94997,
-      "next_season": 3,
-      "total_seasons": 3,
-      "show_status": "Returning Series",
-      "network": "HBO Max",
       "notes": ""
     },
     {
