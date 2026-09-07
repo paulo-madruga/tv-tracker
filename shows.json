@@ -1,15 +1,6 @@
 {
-  "last_updated": "2026-09-07T14:48:24.980084+00:00",
+  "last_updated": "2026-09-07T23:13:03.005Z",
   "watching_now": [
-    {
-      "id": "silo",
-      "title": "Silo",
-      "tmdb_id": 125988,
-      "current_season": 3,
-      "total_seasons": 3,
-      "show_status": "Returning Series",
-      "notes": ""
-    },
     {
       "id": "foundation",
       "title": "Foundation",
@@ -184,6 +175,16 @@
       "tmdb_id": 209867,
       "seasons_watched": 1,
       "total_seasons": 1,
+      "show_status": "Returning Series",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "silo",
+      "title": "Silo",
+      "tmdb_id": 125988,
+      "seasons_watched": 3,
+      "total_seasons": 3,
       "show_status": "Returning Series",
       "notes": "",
       "expected_date": null
