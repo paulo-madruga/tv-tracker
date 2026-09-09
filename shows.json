@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-07T23:13:03.005Z",
+  "last_updated": "2026-09-09T22:26:31.526Z",
   "watching_now": [
     {
       "id": "foundation",
@@ -313,15 +313,6 @@
     }
   ],
   "claude_recommendations": [
-    {
-      "id": "utopia",
-      "title": "Utopia",
-      "tmdb_id": 52814,
-      "total_seasons": 2,
-      "show_status": "Ended",
-      "network": "Channel 4",
-      "reason": "Dark conspiracy thriller about a mysterious graphic novel and pandemic manipulation with tight cast and relentless momentum. Combines tech paranoia with survival elements in a controlled, arc-driven narrative."
-    },
     {
       "id": "deutschland-83",
       "title": "Deutschland 83",
@@ -676,6 +667,15 @@
       "dismiss_reason": "not_interested",
       "dismiss_reason_label": "Not interested",
       "dismissed_at": "2026-03-04"
+    },
+    {
+      "id": "utopia",
+      "title": "Utopia",
+      "tmdb_id": 52814,
+      "network": "Channel 4",
+      "dismiss_reason": "no_service",
+      "dismiss_reason_label": "No streaming service",
+      "dismissed_at": "2026-09-09"
     }
   ]
 }
