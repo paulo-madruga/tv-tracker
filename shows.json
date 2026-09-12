@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-12T11:44:21.827Z",
+  "last_updated": "2026-09-12T13:18:30.863Z",
   "watching_now": [
     {
       "id": "ted-lasso",
@@ -9,6 +9,15 @@
       "total_seasons": 4,
       "show_status": "Returning Series",
       "notes": ""
+    },
+    {
+      "id": "dark-matter",
+      "title": "Dark Matter",
+      "tmdb_id": 233714,
+      "current_season": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "notes": "S1: 82% RT"
     }
   ],
   "available_to_watch_next": [
@@ -283,16 +292,6 @@
       "show_status": "Continuing",
       "blurb": "Alternate-history space race exploring political intrigue and personal sacrifice. Gradually darkens across seasons.",
       "notes": "S1: 75% RT",
-      "network": "Apple TV+"
-    },
-    {
-      "id": "dark-matter",
-      "title": "Dark Matter",
-      "tmdb_id": 233714,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "blurb": "High-concept sci-fi about a physicist thrust into parallel realities. Balances action with moral dilemmas.",
-      "notes": "S1: 82% RT",
       "network": "Apple TV+"
     },
     {
