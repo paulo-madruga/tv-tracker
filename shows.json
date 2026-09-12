@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-12T01:17:33.000Z",
+  "last_updated": "2026-09-12T11:44:18.647Z",
   "watching_now": [
     {
       "id": "ted-lasso",
@@ -31,16 +31,6 @@
       "show_status": "Returning Series",
       "network": "Netflix",
       "notes": "S3 not yet announced"
-    },
-    {
-      "id": "alien-earth",
-      "title": "Alien: Earth",
-      "tmdb_id": 202555,
-      "next_season": 2,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
-      "network": "Hulu",
-      "notes": ""
     },
     {
       "id": "shrinking",
@@ -188,6 +178,17 @@
       "seasons_watched": 3,
       "total_seasons": 3,
       "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "alien-earth",
+      "title": "Alien: Earth",
+      "tmdb_id": 202555,
+      "seasons_watched": 1,
+      "total_seasons": 2,
+      "show_status": "Returning Series",
+      "network": "Hulu",
       "notes": "",
       "expected_date": null
     }
