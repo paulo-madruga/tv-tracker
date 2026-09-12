@@ -1,15 +1,6 @@
 {
-  "last_updated": "2026-09-12T01:08:17.052Z",
+  "last_updated": "2026-09-12T01:16:44.060Z",
   "watching_now": [
-    {
-      "id": "foundation",
-      "title": "Foundation",
-      "tmdb_id": 93740,
-      "current_season": 3,
-      "total_seasons": 3,
-      "show_status": "Continuing",
-      "notes": ""
-    },
     {
       "id": "ted-lasso",
       "title": "Ted Lasso",
@@ -187,6 +178,16 @@
       "seasons_watched": 3,
       "total_seasons": 3,
       "show_status": "Returning Series",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "foundation",
+      "title": "Foundation",
+      "tmdb_id": 93740,
+      "seasons_watched": 3,
+      "total_seasons": 3,
+      "show_status": "Continuing",
       "notes": "",
       "expected_date": null
     }
