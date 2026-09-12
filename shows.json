@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-12T01:17:17.576Z",
+  "last_updated": "2026-09-12T01:17:33.000Z",
   "watching_now": [
     {
       "id": "ted-lasso",
@@ -61,6 +61,16 @@
       "show_status": "Returning Series",
       "network": "Prime Video",
       "notes": "Pre-production underway"
+    },
+    {
+      "id": "industry",
+      "title": "Industry",
+      "tmdb_id": 90812,
+      "next_season": 1,
+      "total_seasons": 4,
+      "show_status": "Continuing",
+      "network": "",
+      "notes": ""
     }
   ],
   "waiting_for_next_season": [
@@ -178,17 +188,6 @@
       "seasons_watched": 3,
       "total_seasons": 3,
       "show_status": "Continuing",
-      "notes": "",
-      "expected_date": null
-    },
-    {
-      "id": "industry",
-      "title": "Industry",
-      "tmdb_id": 90812,
-      "seasons_watched": 0,
-      "total_seasons": 4,
-      "show_status": "Continuing",
-      "network": "",
       "notes": "",
       "expected_date": null
     }
