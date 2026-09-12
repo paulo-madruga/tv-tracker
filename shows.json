@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-09T22:26:31.526Z",
+  "last_updated": "2026-09-12T01:08:17.052Z",
   "watching_now": [
     {
       "id": "foundation",
@@ -8,15 +8,6 @@
       "current_season": 3,
       "total_seasons": 3,
       "show_status": "Continuing",
-      "notes": ""
-    },
-    {
-      "id": "house-of-the-dragon",
-      "title": "House of the Dragon",
-      "tmdb_id": 94997,
-      "current_season": 3,
-      "total_seasons": 3,
-      "show_status": "Returning Series",
       "notes": ""
     },
     {
@@ -183,6 +174,16 @@
       "id": "silo",
       "title": "Silo",
       "tmdb_id": 125988,
+      "seasons_watched": 3,
+      "total_seasons": 3,
+      "show_status": "Returning Series",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "house-of-the-dragon",
+      "title": "House of the Dragon",
+      "tmdb_id": 94997,
       "seasons_watched": 3,
       "total_seasons": 3,
       "show_status": "Returning Series",
