@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-14T15:41:02.177895+00:00",
+  "last_updated": "2026-09-16T15:59:10.537Z",
   "watching_now": [
     {
       "id": "ted-lasso",
@@ -311,6 +311,16 @@
       "blurb": "Political thriller about an ambassador juggling international crises. Fast-paced geopolitics and character-driven intrigue.",
       "notes": "S1: 84% RT",
       "network": "Netflix"
+    },
+    {
+      "id": "widow-s-bay",
+      "title": "Widow's Bay",
+      "tmdb_id": 270476,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "network": "",
+      "blurb": "The mayor of a New England town resolves to turn it into the next tourist hot spot, despite local warnings that it's cursed.",
+      "notes": ""
     }
   ],
   "claude_recommendations": [
