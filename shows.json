@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-21T15:40:30.792490+00:00",
+  "last_updated": "2026-09-25T00:07:31.880Z",
   "watching_now": [
     {
       "id": "ted-lasso",
@@ -18,6 +18,15 @@
       "total_seasons": 1,
       "show_status": "Continuing",
       "notes": "S1: 82% RT"
+    },
+    {
+      "id": "quarterback",
+      "title": "Quarterback",
+      "tmdb_id": 228891,
+      "current_season": 3,
+      "total_seasons": 1,
+      "show_status": "Returning Series",
+      "notes": "S3 not yet announced"
     }
   ],
   "available_to_watch_next": [
@@ -30,16 +39,6 @@
       "show_status": "Continuing",
       "notes": "",
       "network": "HBO Max"
-    },
-    {
-      "id": "quarterback",
-      "title": "Quarterback",
-      "tmdb_id": 228891,
-      "next_season": 3,
-      "total_seasons": 1,
-      "show_status": "Returning Series",
-      "network": "Netflix",
-      "notes": "S3 not yet announced"
     },
     {
       "id": "reacher",
