@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-01T01:48:00.471Z",
+  "last_updated": "2026-10-03T21:44:07.939Z",
   "watching_now": [
     {
       "id": "ted-lasso",
@@ -221,16 +221,6 @@
       "blurb": "A darkly satirical sci-fi thriller where employees sever their memories between work and home, exploring corporate control and autonomy with tension and strong arcs.",
       "notes": "",
       "network": "Apple TV+"
-    },
-    {
-      "id": "the-leftovers",
-      "title": "The Leftovers",
-      "tmdb_id": 54344,
-      "total_seasons": 3,
-      "show_status": "Ended",
-      "blurb": "Explores grief and faith after a sudden global disappearance. Emotionally intense with complex characters.",
-      "notes": "S1: 82% RT",
-      "network": "HBO Max"
     },
     {
       "id": "the-terror",
