@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-03T21:44:07.939Z",
+  "last_updated": "2026-10-05T17:55:56.218572+00:00",
   "watching_now": [
     {
       "id": "ted-lasso",
@@ -56,6 +56,26 @@
       "next_season": 1,
       "total_seasons": 4,
       "show_status": "Continuing",
+      "network": "",
+      "notes": ""
+    },
+    {
+      "id": "alien-earth",
+      "title": "Alien: Earth",
+      "tmdb_id": 202555,
+      "next_season": 2,
+      "total_seasons": 2,
+      "show_status": "Returning Series",
+      "network": "Hulu",
+      "notes": ""
+    },
+    {
+      "id": "shrinking",
+      "title": "Shrinking",
+      "tmdb_id": 136315,
+      "next_season": 4,
+      "total_seasons": 5,
+      "show_status": "Ended",
       "network": "",
       "notes": ""
     }
@@ -175,28 +195,6 @@
       "seasons_watched": 3,
       "total_seasons": 3,
       "show_status": "Returning Series",
-      "notes": "",
-      "expected_date": null
-    },
-    {
-      "id": "alien-earth",
-      "title": "Alien: Earth",
-      "tmdb_id": 202555,
-      "seasons_watched": 1,
-      "total_seasons": 2,
-      "show_status": "Returning Series",
-      "network": "Hulu",
-      "notes": "",
-      "expected_date": null
-    },
-    {
-      "id": "shrinking",
-      "title": "Shrinking",
-      "tmdb_id": 136315,
-      "seasons_watched": 3,
-      "total_seasons": 5,
-      "show_status": "Ended",
-      "network": "",
       "notes": "",
       "expected_date": null
     }
