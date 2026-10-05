@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-05T17:55:56.218572+00:00",
+  "last_updated": "2026-10-05T23:29:36.938Z",
   "watching_now": [
     {
       "id": "ted-lasso",
@@ -9,15 +9,6 @@
       "total_seasons": 4,
       "show_status": "Returning Series",
       "notes": ""
-    },
-    {
-      "id": "dark-matter",
-      "title": "Dark Matter",
-      "tmdb_id": 233714,
-      "current_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": "S1: 82% RT"
     },
     {
       "id": "quarterback",
@@ -195,6 +186,16 @@
       "seasons_watched": 3,
       "total_seasons": 3,
       "show_status": "Returning Series",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "dark-matter",
+      "title": "Dark Matter",
+      "tmdb_id": 233714,
+      "seasons_watched": 1,
+      "total_seasons": 1,
+      "show_status": "Continuing",
       "notes": "",
       "expected_date": null
     }
