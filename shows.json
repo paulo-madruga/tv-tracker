@@ -1,15 +1,6 @@
 {
-  "last_updated": "2026-10-05T23:29:53.106Z",
+  "last_updated": "2026-10-08T01:02:37.426Z",
   "watching_now": [
-    {
-      "id": "ted-lasso",
-      "title": "Ted Lasso",
-      "tmdb_id": 97546,
-      "current_season": 4,
-      "total_seasons": 4,
-      "show_status": "Returning Series",
-      "notes": ""
-    },
     {
       "id": "quarterback",
       "title": "Quarterback",
@@ -194,6 +185,16 @@
       "tmdb_id": 93740,
       "seasons_watched": 3,
       "total_seasons": 3,
+      "show_status": "Returning Series",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "ted-lasso",
+      "title": "Ted Lasso",
+      "tmdb_id": 97546,
+      "seasons_watched": 4,
+      "total_seasons": 4,
       "show_status": "Returning Series",
       "notes": "",
       "expected_date": null
