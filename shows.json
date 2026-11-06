@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-06T11:38:52.304Z",
+  "last_updated": "2026-11-06T11:39:08.487Z",
   "watching_now": [
     {
       "id": "quarterback",
@@ -59,16 +59,6 @@
       "total_seasons": 5,
       "show_status": "Ended",
       "network": "",
-      "notes": ""
-    },
-    {
-      "id": "senna",
-      "title": "Senna",
-      "tmdb_id": 211039,
-      "next_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "network": "Netflix",
       "notes": ""
     }
   ],
@@ -207,6 +197,17 @@
       "seasons_watched": 2,
       "total_seasons": 1,
       "show_status": "Continuing",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "senna",
+      "title": "Senna",
+      "tmdb_id": 211039,
+      "seasons_watched": 0,
+      "total_seasons": 1,
+      "show_status": "Continuing",
+      "network": "Netflix",
       "notes": "",
       "expected_date": null
     }
