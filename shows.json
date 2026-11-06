@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-02T19:12:28.471751+00:00",
+  "last_updated": "2026-11-06T11:37:43.289Z",
   "watching_now": [
     {
       "id": "quarterback",
@@ -15,15 +15,6 @@
       "title": "Dune: Prophecy",
       "tmdb_id": 215748,
       "current_season": 1,
-      "total_seasons": 1,
-      "show_status": "Continuing",
-      "notes": ""
-    },
-    {
-      "id": "dark-matter",
-      "title": "Dark Matter",
-      "tmdb_id": 233714,
-      "current_season": 2,
       "total_seasons": 1,
       "show_status": "Continuing",
       "notes": ""
@@ -196,6 +187,16 @@
       "seasons_watched": 4,
       "total_seasons": 4,
       "show_status": "Returning Series",
+      "notes": "",
+      "expected_date": null
+    },
+    {
+      "id": "dark-matter",
+      "title": "Dark Matter",
+      "tmdb_id": 233714,
+      "seasons_watched": 2,
+      "total_seasons": 1,
+      "show_status": "Continuing",
       "notes": "",
       "expected_date": null
     }
