@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-09T19:30:20.435117+00:00",
+  "last_updated": "2026-11-16T19:16:53.307040+00:00",
   "watching_now": [
     {
       "id": "quarterback",
@@ -70,6 +70,16 @@
       "show_status": "Continuing",
       "network": "Netflix",
       "notes": ""
+    },
+    {
+      "id": "rings-of-power",
+      "title": "Lord of the Rings: The Rings of Power",
+      "tmdb_id": 84773,
+      "next_season": 3,
+      "total_seasons": 3,
+      "show_status": "Returning Series",
+      "network": "Prime Video",
+      "notes": ""
     }
   ],
   "waiting_for_next_season": [
@@ -127,17 +137,6 @@
       "notes": "",
       "expected_date": "2027",
       "network": "HBO Max"
-    },
-    {
-      "id": "rings-of-power",
-      "title": "Lord of the Rings: The Rings of Power",
-      "tmdb_id": 84773,
-      "seasons_watched": 2,
-      "total_seasons": 3,
-      "show_status": "Returning Series",
-      "notes": "",
-      "expected_date": null,
-      "network": "Prime Video"
     },
     {
       "id": "pluribus",
